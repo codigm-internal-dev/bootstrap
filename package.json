@@ -59,8 +59,8 @@
     "dist": "npm-run-all --parallel css js",
     "test": "npm-run-all dist --parallel js-test --sequential docs-compile docs-lint bundlesize",
     "watch": "npm-run-all --parallel watch-css watch-js",
-    "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css\"",
-    "watch-js": "nodemon --ignore scss/ --ignore js/dist/ --ignore dist/ -e js -x \"npm-run-all --parallel js-compile-*\""
+    "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css && cp -r /workspace/goorm-bootstrap/bootstrap/dist/* /workspace/goorm-bootstrap/bootswatch/bower_components/bootstrap/dist/\"",
+    "watch-js": "nodemon --ignore scss/ --ignore js/dist/ --ignore dist/ -e js -x \"npm-run-all --parallel js-compile-* && cp -r /workspace/goorm-bootstrap/bootstrap/dist/* /workspace/goorm-bootstrap/bootswatch/bower_components/bootstrap/dist/\""
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
