@@ -97,7 +97,7 @@ var Modal = function () {
     _proto.show = function show(relatedTarget) {
       var _this = this;
 
-      if (this._isTransitioning) {
+      if (this._isTransitioning || this._isShown) {
         return;
       }
 
@@ -577,5 +577,5 @@ var Modal = function () {
   };
 
   return Modal;
-}(jQuery);
+}($);
 //# sourceMappingURL=modal.js.map
