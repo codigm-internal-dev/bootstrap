@@ -777,13 +777,11 @@ $modal-transition:            transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-// $alert-padding-y:             .75rem !default; // @goorm: original
-// $alert-padding-x:             1.25rem !default; // @goorm: original
-$alert-padding-y:             .375rem !default; // @goorm: new
-$alert-padding-x:             .9375rem !default; // @goorm: new
+$alert-padding-y:             .75rem !default;
+$alert-padding-x:             1.25rem !default;
 $alert-margin-bottom:         1rem !default;
 $alert-border-radius:         $border-radius !default;
-$alert-link-font-weight:      $font-weight-bold !default;
+// $alert-link-font-weight:      $font-weight-bold !default; // @goorm: original (not using)
 $alert-border-width:          $border-width !default;
 
 
@@ -879,10 +877,12 @@ $carousel-transition:           transform .6s ease !default;
 
 // Close
 
-$close-font-size:             $font-size-base * 1.5 !default;
-$close-font-weight:           $font-weight-bold !default;
-$close-color:                 $black !default;
-$close-text-shadow:           0 1px 0 $white !default;
+// $close-font-size:             $font-size-base * 1.5 !default; // @goorm: original (not using)
+// $close-font-weight:           $font-weight-bold !default; // @goorm: original
+$close-font-weight:           600 !default; // @goorm: new
+// $close-color:                 $black !default; // @goorm: original
+$close-color:                 $white !default; // @goorm: new
+// $close-text-shadow:           0 1px 0 $white !default; // @goorm: original (not using)
 
 // Code
 

@@ -1,16 +1,18 @@
 .close {
   float: right;
-  font-size: $close-font-size;
+  // font-size: $close-font-size; // @goorm: original (not using)
   font-weight: $close-font-weight;
-  line-height: 1;
+  // line-height: 1; // @goorm: original (use inherit)
   color: $close-color;
-  text-shadow: $close-text-shadow;
-  opacity: .5;
-
+  // text-shadow: $close-text-shadow; // @goorm: original (not using)
+  // opacity: .5; // @goorm: original
+  opacity: .75;  // @goorm: new
+  
   @include hover-focus {
-    color: $close-color;
-    text-decoration: none;
-    opacity: .75;
+    // color: $close-color; // @goorm: original (not using)
+    // text-decoration: none; // @goorm: original (not using)
+    // opacity: .75; // @goorm: original
+    opacity: 1; // @goorm: new
   }
 }
 

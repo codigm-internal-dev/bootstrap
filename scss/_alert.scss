@@ -7,7 +7,8 @@
 	
   padding: $alert-padding-y $alert-padding-x;
   margin-bottom: $alert-margin-bottom;
-  border: $alert-border-width solid transparent;
+  // border: $alert-border-width solid transparent; // @goorm: original 보더 사용하지 않음
+  
   @include border-radius($alert-border-radius);
 }
 
@@ -18,9 +19,10 @@
 }
 
 // Provide class for links that match alerts
-.alert-link {
-  font-weight: $alert-link-font-weight;
-}
+// @goorm: original (not using)
+// .alert-link {
+//   font-weight: $alert-link-font-weight;
+// }
 
 
 // Dismissible alerts
@@ -45,6 +47,7 @@
 
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
-    @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6));
+    // @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6)); // @goorm: original
+    @include alert-variant(theme-color-level($color), theme-color-level($color), $white); // @goorm: new 배경색과 보더색 일치, 글자색 흰색으로 변경
   }
 }
