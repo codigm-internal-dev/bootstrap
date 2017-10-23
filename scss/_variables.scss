@@ -337,8 +337,8 @@ $mark-bg: #fcf8e3 !default;
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 // $table-cell-padding:            .75rem !default; // @goorm: original
-$table-cell-padding-y:          .875rem !default; // @goorm: new
-$table-cell-padding-x:          1.875rem !default; // @goorm: new
+$table-cell-padding-y:          .875rem !default; // @goorm: add
+$table-cell-padding-x:          1.875rem !default; // @goorm: add
 $table-cell-padding-sm:         .3rem !default;
 
 $table-bg:                      transparent !default;
@@ -730,13 +730,19 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05) !defau
 
 // Badges
 
-$badge-font-size:             75% !default;
-$badge-font-weight:           $font-weight-bold !default;
-$badge-padding-y:             .25em !default;
-$badge-padding-x:             .4em !default;
+// $badge-font-size:             75% !default;  // @goorm: original
+$badge-font-size:             .625rem !default; // @goorm: new
+$badge-font-size-lg:          .875rem !default; // @goorm: add
+// $badge-font-weight:           $font-weight-bold !default; // @goorm: original
+$badge-font-weight:           $font-weight-normal !default; // @goorm: new
+// $badge-padding-y:             .25em !default; // @goorm: original
+$badge-padding-y:             .1875rem !default; // @goorm: new
+// $badge-padding-x:             .4em !default; // @goorm: original
+$badge-padding-x:             .75em !default; // @goorm: new
 $badge-border-radius:         $border-radius !default;
 
-$badge-pill-padding-x:        .6em !default;
+// $badge-pill-padding-x:        .6em !default; // @goorm: original
+$badge-pill-padding-x:        .75em !default; // @goorm: new
 // Use a higher than normal value to ensure completely rounded edges when
 // customizing padding or font-size on labels.
 $badge-pill-border-radius:    10rem !default;

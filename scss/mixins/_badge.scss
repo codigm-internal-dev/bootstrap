@@ -1,12 +1,31 @@
 @mixin badge-variant($bg) {
-  @include color-yiq($bg);
+  // @include color-yiq($bg); // @goorm: original
+  color: $white; // @goorm: new
   background-color: $bg;
 
   &[href] {
     @include hover-focus {
-      @include color-yiq($bg);
+      // @include color-yiq($bg);  // @goorm: original (not using)
+      color: $white; // @goorm: new
       text-decoration: none;
       background-color: darken($bg, 10%);
+    }
+  }
+}
+
+// @goorm: add
+@mixin badge-outline-variant($color) {
+  color: $color;
+  background-color: $white;
+  border-color: $color;
+  border-width: 1px;
+  border-style: solid;
+
+  &[href] {
+    @include hover-focus {
+      color: $white;
+      text-decoration: none;
+      background-color: $color;
     }
   }
 }

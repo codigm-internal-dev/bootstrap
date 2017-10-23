@@ -8,7 +8,8 @@
   padding: $badge-padding-y $badge-padding-x;
   font-size: $badge-font-size;
   font-weight: $badge-font-weight;
-  line-height: 1;
+  // line-height: 1; // @goorm: original
+  line-height: 1.7; // @goorm: new
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -18,6 +19,15 @@
   &:empty {
     display: none;
   }
+}
+
+// @goorm: add
+// Size
+//
+// default | large
+
+.badge-lg {
+  font-size: $badge-font-size-lg;
 }
 
 // Quick fix for badges in buttons
@@ -43,5 +53,12 @@
 @each $color, $value in $theme-colors {
   .badge-#{$color} {
     @include badge-variant($value);
+  }
+}
+
+// @goorm: add
+@each $color, $value in $theme-colors {
+  .badge-outline-#{$color} {
+    @include badge-outline-variant($value);
   }
 }
