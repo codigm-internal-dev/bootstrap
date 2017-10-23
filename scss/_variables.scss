@@ -855,7 +855,8 @@ $breadcrumb-margin-bottom:      1rem !default;
 
 $breadcrumb-bg:                 $gray-200 !default;
 $breadcrumb-divider-color:      $gray-600 !default;
-$breadcrumb-active-color:       $gray-600 !default;
+// $breadcrumb-active-color:       $gray-600 !default; // @goorm: original
+$breadcrumb-active-color:       $blue-300 !default; // @goorm: new
 $breadcrumb-divider:            "/" !default;
 
 

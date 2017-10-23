@@ -4,8 +4,8 @@
   padding: $breadcrumb-padding-y $breadcrumb-padding-x;
   margin-bottom: $breadcrumb-margin-bottom;
   list-style: none;
-  background-color: $breadcrumb-bg;
-  @include border-radius($border-radius);
+  // background-color: $breadcrumb-bg; // @goorm: original (not using)
+  // @include border-radius($border-radius); // @goorm: original (not using)
 }
 
 .breadcrumb-item {
@@ -34,5 +34,28 @@
 
   &.active {
     color: $breadcrumb-active-color;
+  }
+  
+  // @goorm: add
+  // Font Size
+  &.breadcrumb-sm {
+    font-size: $font-size-xs;
+  }
+  &.breadcrumb-md {
+    font-size: $font-size-sm;
+  }
+  &.breadcrumb-lg {
+    font-size: $font-size-base;
+  }
+}
+
+// @goorm: add
+a.breadcrumb-item,
+.breadcrumb-item > a {
+  color: $gray-500;
+  
+  &:hover {
+    color: darken($gray-500, 15%);
+    text-decoration: none;
   }
 }
