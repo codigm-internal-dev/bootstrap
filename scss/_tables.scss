@@ -10,7 +10,8 @@
 
   th,
   td {
-    padding: $table-cell-padding;
+    // padding: $table-cell-padding; // @goorm: original
+    padding: $table-cell-padding-y $table-cell-padding-x; // @goorm: new
     vertical-align: top;
     border-top: $table-border-width solid $table-border-color;
   }

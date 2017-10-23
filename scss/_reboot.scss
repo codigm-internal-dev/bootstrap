@@ -301,8 +301,10 @@ table {
 }
 
 caption {
-  padding-top: $table-cell-padding;
-  padding-bottom: $table-cell-padding;
+  // padding-top: $table-cell-padding; // @goorm: original
+  // padding-bottom: $table-cell-padding; // @goorm: original
+  padding-top: $table-cell-padding-y; // @goorm: new
+  padding-bottom: $table-cell-padding-y; // @goorm: new
   color: $text-muted;
   text-align: left;
   caption-side: bottom;
