@@ -2493,13 +2493,13 @@ fieldset[disabled] a.btn {
 }
 
 .btn-warning {
-  color: #313338;
+  color: #fff;
   background-color: #FFA251;
   border-color: #FFA251;
 }
 
 .btn-warning:hover {
-  color: #313338;
+  color: #fff;
   background-color: #ff8e2b;
   border-color: #ff871e;
 }
@@ -2515,7 +2515,7 @@ fieldset[disabled] a.btn {
 
 .btn-warning:not([disabled]):not(.disabled):active, .btn-warning:not([disabled]):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
-  color: #313338;
+  color: #fff;
   background-color: #ff871e;
   border-color: #ff8011;
   box-shadow: 0 0 0 0.2rem rgba(255, 162, 81, 0.5);
@@ -2876,6 +2876,37 @@ fieldset[disabled] a.btn {
   background-color: #313338;
   border-color: #313338;
   box-shadow: 0 0 0 0.2rem rgba(49, 51, 56, 0.5);
+}
+
+/* @goorm: add class */
+.btn-outline-white {
+  color: #fff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #fff;
+}
+
+.btn-outline-white:hover {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-white:focus, .btn-outline-white.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-white.disabled, .btn-outline-white:disabled {
+  color: #fff;
+  background-color: transparent;
+}
+
+.btn-outline-white:not([disabled]):not(.disabled):active, .btn-outline-white:not([disabled]):not(.disabled).active,
+.show > .btn-outline-white.dropdown-toggle {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
 
 .btn-link {

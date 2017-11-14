@@ -69,6 +69,11 @@ fieldset[disabled] a.btn {
   }
 }
 
+/* @goorm: add class */
+.btn-outline-white {
+  @include button-outline-variant($white, $white);
+}
+
 
 //
 // Link buttons
