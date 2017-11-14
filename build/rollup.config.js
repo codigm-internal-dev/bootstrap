@@ -15,12 +15,13 @@ const plugins = [
     externalHelpersWhitelist: [ // include only required helpers
       'defineProperties',
       'createClass',
-      'inheritsLoose'
+      'inheritsLoose',
+      'extends'
     ]
   })
 ]
 const globals = {
-  jquery: '$',
+  jquery: 'jQuery', // ensure we use jQuery which is always available even in noConflict mode
   'popper.js': 'Popper'
 }
 
@@ -39,9 +40,9 @@ module.exports = {
     format: 'iife'
   },
   name: 'bootstrap',
-  external: external,
-  globals: globals,
-  plugins: plugins,
+  external,
+  globals,
+  plugins,
   banner: `/*!
   * Bootstrap v${pkg.version} (${pkg.homepage})
   * Copyright 2011-${year} ${pkg.author}

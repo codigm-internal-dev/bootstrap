@@ -1,10 +1,10 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-beta): util.js
+ * Bootstrap (v4.0.0-beta.2): util.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-var Util = function () {
+var Util = function ($) {
   /**
    * ------------------------------------------------------------------------
    * Private TransitionEnd Helpers
@@ -14,8 +14,6 @@ var Util = function () {
   var MAX_UID = 1000000;
   var TransitionEndEvent = {
     WebkitTransition: 'webkitTransitionEnd',
-    MozTransition: 'transitionend',
-    OTransition: 'oTransitionEnd otransitionend',
     transition: 'transitionend' // shoutout AngusCroll (https://goo.gl/pxwQGp)
 
   };
@@ -79,6 +77,13 @@ var Util = function () {
       $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
   }
+
+  function escapeId(selector) {
+    // we escape IDs in case of special selectors (selector = '#myId:something')
+    // $.escapeSelector does not exist in jQuery < 3
+    selector = typeof $.escapeSelector === 'function' ? $.escapeSelector(selector).substr(1) : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
+    return selector;
+  }
   /**
    * --------------------------------------------------------------------------
    * Public Util Api
@@ -101,6 +106,11 @@ var Util = function () {
 
       if (!selector || selector === '#') {
         selector = element.getAttribute('href') || '';
+      } // if it's an ID
+
+
+      if (selector.charAt(0) === '#') {
+        selector = escapeId(selector);
       }
 
       try {

@@ -20,9 +20,8 @@
     "declaration-block-semicolon-space-after": "always-single-line",
     "declaration-empty-line-before": null,
     "declaration-no-important": true,
-    "font-family-name-quotes": "always-where-required",
+    "font-family-name-quotes": "always-where-recommended",
     "font-weight-notation": "numeric",
-    "function-comma-space-after": null,
     "function-url-no-scheme-relative": true,
     "function-url-quotes": "always",
     "length-zero-no-unit": true,
@@ -36,7 +35,7 @@
       "ignore": ["empty-lines"]
     ],
     "no-descending-specificity": null,
-    "no-duplicate-selectors": null,
+    "no-duplicate-selectors": true,
     "number-leading-zero": "never",
     "order/properties-order": [
       "position",
