@@ -283,7 +283,7 @@ $font-size-base:              1rem !default; // Assumes the browser default, typ
 // $font-size-lg:                ($font-size-base * 1.25) !default; // @goorm: original
 $font-size-lg:                ($font-size-base * 1.125) !default; // @goorm: new
 $font-size-sm:                ($font-size-base * 0.875) !default;
-$font-size-xs:                ($font-size-base * 0.75) !default; // @goorm: new
+$font-size-xs:                ($font-size-base * 0.75) !default; // @goorm: add
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -389,7 +389,8 @@ $table-dark-color:            $body-bg !default;
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y:         .375rem !default;
+// $input-btn-padding-y:         .375rem !default;// @goorm: original
+$input-btn-padding-y:         .34375rem !default;// @goorm: new
 $input-btn-padding-x:         .75rem !default;
 $input-btn-line-height:       $line-height-base !default;
 
@@ -401,15 +402,14 @@ $input-btn-padding-y-xs:    .125rem !default; // @goorm: add
 $input-btn-padding-x-xs:    .3125rem !default; // @goorm: add
 $input-btn-line-height-xs:  $line-height-base !default; // @goorm: add
 
-// $input-btn-padding-y-sm:      .25rem !default; // @goorm: original
-$input-btn-padding-y-sm:      .3125rem !default; // @goorm: new
+$input-btn-padding-y-sm:      .25rem !default;
 // $input-btn-padding-x-sm:      .5rem !default; // @goorm: original
 $input-btn-padding-x-sm:      .625rem !default; // @goorm: new
 // $input-btn-line-height-sm:    $line-height-sm !default; // @goorm: original
 $input-btn-line-height-sm:    $line-height-base !default; // @goorm: new
 
 // $input-btn-padding-y-lg:      .5rem !default;// @goorm: original
-$input-btn-padding-y-lg:      .5625rem !default;// @goorm: new
+$input-btn-padding-y-lg:      .53125rem !default;// @goorm: new
 // $input-btn-padding-x-lg:      1rem !default;// @goorm: original
 $input-btn-padding-x-lg:      1.125rem !default;// @goorm: new
 // $input-btn-line-height-lg:    $line-height-lg !default;// @goorm: original

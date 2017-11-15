@@ -72,6 +72,12 @@ fieldset[disabled] a.btn {
 /* @goorm: add class */
 .btn-outline-white {
   @include button-outline-variant($white, $white);
+  
+  &:hover {
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+  }
 }
 
 
@@ -114,7 +120,7 @@ fieldset[disabled] a.btn {
 
 .btn-lg {
   // @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);// @goorm: original
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius);// @goorm: new
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $btn-line-height-lg, $btn-border-radius);// @goorm: new
 }
 
 .btn-sm {
