@@ -25,6 +25,15 @@
     @include hover-focus-active {
       z-index: 2;
     }
+    
+    /* @goorm: add */
+    + .gi {
+      position: absolute;
+      top: calc((100% - 16px) / 2);
+      right: 14px;
+      z-index: 2;
+      color: $gray-500;
+    }
   }
 }
 
@@ -36,7 +45,8 @@
   display: flex;
   align-items: center;
 
-  &:not(:first-child):not(:last-child) {
+  // &:not(:first-child):not(:last-child) {// @goorm: original
+  &:not(:first-child):not(:last-child):not(.gr-custom-input) {// @goorm: new
     @include border-radius(0);
   }
 }
@@ -80,12 +90,14 @@
 .input-group-addon {
   padding: $input-padding-y $input-padding-x;
   margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
-  font-size: $font-size-base; // Match inputs
+  // font-size: $font-size-base; // Match inputs // @goorm: original
+  font-size: $font-size-sm; // Match inputs // @goorm: new
   font-weight: $font-weight-normal;
   line-height: $input-line-height;
   color: $input-group-addon-color;
   text-align: center;
-  background-color: $input-group-addon-bg;
+  // background-color: $input-group-addon-bg;// @goorm: original
+  background: $input-group-addon-bg;// @goorm: new
   border: $input-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius);
 
@@ -107,6 +119,11 @@
   input[type="checkbox"] {
     margin-top: 0;
   }
+  
+  /* @goorm: add */
+  > .gi {
+    margin-left: 2px;
+  }
 }
 
 
@@ -114,7 +131,8 @@
 // Reset rounded corners
 //
 
-.input-group .form-control:not(:last-child),
+// .input-group .form-control:not(:last-child),// @goorm: original
+.input-group .form-control:not(:last-child):not(.gr-custom-input),// @goorm: new
 .input-group .custom-select:not(:last-child),
 .input-group .custom-file:not(:last-child) .custom-file-control::before,
 .input-group-addon:not(:last-child),
