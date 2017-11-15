@@ -3759,15 +3759,38 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  border-bottom: 1px solid #DFE2E5;
 }
 
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  position: relative;
+  color: #90929E;
+  /* @goorm: add */
+  /* @goorm: add */
+}
+
+.nav-link:hover {
+  color: #90929E;
 }
 
 .nav-link:focus, .nav-link:hover {
   text-decoration: none;
+}
+
+.nav-link.active {
+  color: #609AE9;
+}
+
+.nav-link.active:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: calc(100% - 1rem * 2);
+  height: 3px;
+  bottom: 0;
+  background-color: #609AE9;
 }
 
 .nav-link.disabled {
