@@ -17,6 +17,7 @@
   padding: $nav-link-padding-y $nav-link-padding-x;
   position: relative;// @goorm: add
   color: $nav-link-color;// @goorm: add
+  font-size: $nav-link-font-size-base;// @goorm: add
   
   /* @goorm: add */
   &:hover {
@@ -46,6 +47,11 @@
   &.disabled {
     color: $nav-link-disabled-color;
   }
+}
+
+/* @goorm: add */
+.nav-lg .nav-link {
+  font-size: $nav-link-font-size-lg;
 }
 
 //

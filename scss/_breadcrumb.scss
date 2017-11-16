@@ -39,13 +39,10 @@
   // @goorm: add
   // Font Size
   &.breadcrumb-sm {
-    font-size: $font-size-xs;
-  }
-  &.breadcrumb-md {
     font-size: $font-size-sm;
   }
   &.breadcrumb-lg {
-    font-size: $font-size-base;
+    font-size: $font-size-lg;
   }
 }
 

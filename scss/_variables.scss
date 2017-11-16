@@ -279,11 +279,14 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+// @goorm: xl - 18px, lg - 16px, base - 14px, sm - 12px
+// $font-size-base:              1rem !default; // Assumes the browser default, typically `16px` // @goorm: original
+$font-size-base:              .875rem !default; // Assumes the browser default, typically `16px` // @goorm: new / goorm assumes 14px
+$font-size-xl:                1.125rem !default;// @goorm: add / 18px
 // $font-size-lg:                ($font-size-base * 1.25) !default; // @goorm: original
-$font-size-lg:                ($font-size-base * 1.125) !default; // @goorm: new
-$font-size-sm:                ($font-size-base * 0.875) !default;
-$font-size-xs:                ($font-size-base * 0.75) !default; // @goorm: add
+$font-size-lg:                1rem !default; // @goorm: new / 16px
+// $font-size-sm:                ($font-size-base * 0.875) !default;// @goorm: original
+$font-size-sm:                .75rem !default;// @goorm: new / 12px
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -296,12 +299,17 @@ $line-height-base:            1.7 !default; // @goorm: new
 
 // $h1-font-size:                $font-size-base * 2.5 !default; // @goorm: original
 // $h2-font-size:                $font-size-base * 2 !default; // @goorm: original
-$h1-font-size:                $font-size-base * 2.375 !default; // @goorm: new
-$h2-font-size:                $font-size-base * 1.875 !default; // @goorm: new
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+// $h3-font-size:                $font-size-base * 1.75 !default; // @goorm: original
+// $h4-font-size:                $font-size-base * 1.5 !default; // @goorm: original
+// $h5-font-size:                $font-size-base * 1.25 !default; // @goorm: original
+// $h6-font-size:                $font-size-base !default; // @goorm: original
+$h1-font-size:                2.375rem !default; // @goorm: new
+$h2-font-size:                1.875rem !default; // @goorm: new
+$h3-font-size:                1.75rem !default; // @goorm: new
+$h4-font-size:                1.5rem !default; // @goorm: new
+$h5-font-size:                1.25rem !default; // @goorm: new
+$h6-font-size:                1rem !default; // @goorm: new
+
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
@@ -657,9 +665,13 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                .5rem !default;
+// $nav-link-padding-y:                .5rem !default;// @goorm: original
+$nav-link-padding-y:                1.125rem !default;// @goorm: new / 18px
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
+
+$nav-link-font-size-base:           .875rem !default;// @goorm: add
+$nav-link-font-size-lg:             1rem !default;// @goorm: add
 
 $nav-tabs-border-color:             $gray-300 !default;
 $nav-tabs-border-width:             $border-width !default;
