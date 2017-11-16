@@ -31,6 +31,31 @@
   }
 }
 
+/* @goorm: add */
+.card-band,
+.card-band-top,
+.card-band-bottom {
+  width: 100%;
+  height: $card-band-height;
+}
+
+/* @goorm: add */
+.card-band-top {
+  @include border-top-radius($card-inner-border-radius);
+}
+
+/* @goorm: add */
+.card-band-bottom {
+  @include border-bottom-radius($card-inner-border-radius);
+}
+
+/* @goorm: add */
+@each $color, $value in $theme-colors {
+  .card-band-#{$color} {
+    background-color: $value;
+  }
+}
+
 .card-body {
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
   // as much space as possible, ensuring footers are aligned to the bottom.
@@ -133,6 +158,12 @@
 .card-img-bottom {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
   @include border-bottom-radius($card-inner-border-radius);
+}
+
+/* @goorm: add */
+.card-img-float {
+  margin-top: $card-img-float-margin-top;
+  align-self: center;
 }
 
 
