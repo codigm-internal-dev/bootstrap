@@ -9,38 +9,14 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  border-bottom: $nav-border-width solid $nav-border-color;// @goorm: add
 }
 
 .nav-link {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
-  position: relative;// @goorm: add
-  color: $nav-link-color;// @goorm: add
-  font-size: $nav-link-font-size-base;// @goorm: add
   
-  /* @goorm: add */
-  &:hover {
-    color: $nav-link-color;
-  }
-
   @include hover-focus {
     text-decoration: none;
-  }
-
-  /* @goorm: add */
-  &.active {
-    color: $nav-link-active-color;
-    
-    &:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: $nav-link-active-border-size;
-      height: $nav-link-active-border-width;
-      bottom: 0;
-      background-color: $nav-link-active-border-color;
-    }
   }
   
   // Disabled state lightens text
@@ -109,6 +85,42 @@
   .show > .nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
+  }
+}
+
+
+/* @goorm: add class */
+//
+// Underline
+//
+
+.nav-underline {
+  border-bottom: $nav-underline-border-width solid $nav-underline-border-color;
+  
+  .nav-link {
+    padding-top: $nav-underline-link-padding-y;
+    padding-bottom: $nav-underline-link-padding-y;
+    position: relative;
+    color: $nav-underline-link-color;
+    font-size: $nav-link-font-size-base;
+    
+    &:hover {
+      color: $nav-underline-link-color;
+    }
+
+    &.active {
+      color: $nav-underline-link-active-color;
+
+      &:after {
+        display: block;
+        position: absolute;
+        content: "";
+        width: $nav-underline-link-active-border-size;
+        height: $nav-underline-link-active-border-width;
+        bottom: 0;
+        background-color: $nav-underline-link-active-border-color;
+      }
+    }
   }
 }
 

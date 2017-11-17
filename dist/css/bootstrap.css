@@ -9,6 +9,7 @@
 /* @goorm: original */
 /* @goorm: new */
 /* @goorm: add */
+/* @goorm: add */
 :root {
   --blue_1: #3593D3;
   --blue_2: #004D8C;
@@ -2919,6 +2920,17 @@ fieldset[disabled] a.btn {
   border-color: #609AE9;
 }
 
+/* @goorm: add class */
+.btn-dropdown {
+  width: 230px;
+  border: 1px solid #CED0DA;
+  border-radius: 4px;
+  background: linear-gradient(0deg, #F3F5F8 0%, #FFFFFF 100%);
+  color: #313338;
+  text-align: left;
+  font-size: 14px;
+}
+
 .btn-link {
   font-weight: 400;
   color: #609AE9;
@@ -3760,39 +3772,15 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  border-bottom: 1px solid #DFE2E5;
 }
 
 .nav-link {
   display: block;
-  padding: 1.125rem 1rem;
-  position: relative;
-  color: #90929E;
-  font-size: 0.875rem;
-  /* @goorm: add */
-  /* @goorm: add */
-}
-
-.nav-link:hover {
-  color: #90929E;
+  padding: 0.5rem 1rem;
 }
 
 .nav-link:focus, .nav-link:hover {
   text-decoration: none;
-}
-
-.nav-link.active {
-  color: #609AE9;
-}
-
-.nav-link.active:after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: calc(100% - 1rem * 2);
-  height: 3px;
-  bottom: 0;
-  background-color: #609AE9;
 }
 
 .nav-link.disabled {
@@ -3851,6 +3839,37 @@ tbody.collapse.show {
   background-color: #609AE9;
 }
 
+/* @goorm: add class */
+.nav-underline {
+  border-bottom: 1px solid #DFE2E5;
+}
+
+.nav-underline .nav-link {
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  position: relative;
+  color: #90929E;
+  font-size: 0.875rem;
+}
+
+.nav-underline .nav-link:hover {
+  color: #90929E;
+}
+
+.nav-underline .nav-link.active {
+  color: #609AE9;
+}
+
+.nav-underline .nav-link.active:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: calc(100% - 1rem * 2);
+  height: 3px;
+  bottom: 0;
+  background-color: #609AE9;
+}
+
 .nav-fill .nav-item {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -3900,8 +3919,8 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 1.01875rem;
-  padding-bottom: 1.01875rem;
+  padding-top: 0.39375rem;
+  padding-bottom: 0.39375rem;
   margin-right: 1rem;
   font-size: 1rem;
   line-height: inherit;
@@ -3934,8 +3953,8 @@ tbody.collapse.show {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .navbar-collapse {

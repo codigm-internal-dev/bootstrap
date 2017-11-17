@@ -665,8 +665,7 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-// $nav-link-padding-y:                .5rem !default;// @goorm: original
-$nav-link-padding-y:                1.125rem !default;// @goorm: new / 18px
+$nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
 
@@ -685,14 +684,15 @@ $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;
 $nav-pills-link-active-bg:          $component-active-bg !default;
 
-$nav-border-color:                  #DFE2E5 !default;// @goorm: add
-$nav-border-width:                  1px !default;// @goorm: add
-
-$nav-link-color:                    $gray-500 !default;// @goorm: add
-$nav-link-active-color:             $blue-300 !default;// @goorm: add
-$nav-link-active-border-color:      $blue-300 !default;// @goorm: add
-$nav-link-active-border-width:      3px !default;// @goorm: add
-$nav-link-active-border-size:       calc(100% - #{$nav-link-padding-x} * 2) !default;// @goorm: add
+/* @goorm: add */
+$nav-underline-link-padding-y:           1.125rem !default;// 18px
+$nav-underline-border-color:             #DFE2E5 !default;
+$nav-underline-border-width:             1px !default;
+$nav-underline-link-color:               $gray-500 !default;
+$nav-underline-link-active-color:        $blue-300 !default;
+$nav-underline-link-active-border-color: $blue-300 !default;
+$nav-underline-link-active-border-width: 3px !default;
+$nav-underline-link-active-border-size:  calc(100% - #{$nav-link-padding-x} * 2) !default;
 
 // Navbar
 
