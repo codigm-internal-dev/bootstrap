@@ -2336,7 +2336,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn:focus, .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(96, 154, 233, 0.25);
+  box-shadow: none;
+  border: 1px solid #609AE9;
 }
 
 .btn.disabled, .btn:disabled {
@@ -2344,7 +2345,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .btn:not([disabled]):not(.disabled):active, .btn:not([disabled]):not(.disabled).active {
-  background-image: none;
+  border: 1px solid #609AE9;
 }
 
 a.btn.disabled,
@@ -2929,6 +2930,14 @@ fieldset[disabled] a.btn {
   color: #313338;
   text-align: left;
   font-size: 14px;
+  position: relative;
+}
+
+.btn-dropdown.disabled, .btn-dropdown:disabled {
+  border: 1px solid #CED0DA;
+  background: #F5F5F5;
+  color: #CED0DA;
+  opacity: 1;
 }
 
 .btn-link {
@@ -3027,6 +3036,10 @@ tbody.collapse.show {
   position: relative;
 }
 
+.dropdown-toggle {
+  /* @goorm: add state */
+}
+
 .dropdown-toggle::after {
   display: inline-block;
   width: 0;
@@ -3042,6 +3055,12 @@ tbody.collapse.show {
 
 .dropdown-toggle:empty::after {
   margin-left: 0;
+}
+
+.dropdown-toggle.btn::after {
+  left: 90%;
+  top: 45%;
+  position: absolute;
 }
 
 .dropdown-menu {
@@ -3949,6 +3968,11 @@ tbody.collapse.show {
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
+}
+
+/* @goorm: add */
+.navbar-nav:not(:first-of-type) {
+  margin-left: 20px;
 }
 
 .navbar-text {
