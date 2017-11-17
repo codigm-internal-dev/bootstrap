@@ -3200,6 +3200,7 @@ tbody.collapse.show {
   position: relative;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
+  border-radius: 4px;
 }
 
 .btn-group > .btn:hover,
