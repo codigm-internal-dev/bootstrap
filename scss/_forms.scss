@@ -56,8 +56,8 @@
   }
   
   // @goorm: add
-  &:not([readonly]):not([disabled]):hover {
-    border-color: $gray-500
+  &:not([readonly]):not([disabled]):not(.is-invalid):not(.is-valid):hover {
+    border-color: $input-focus-border-color;
   }
 }
 
