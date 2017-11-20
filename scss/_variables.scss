@@ -632,7 +632,6 @@ $dropdown-border-radius:            $border-radius !default;
 $dropdown-border-width:             $border-width !default;
 $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
-
 // $dropdown-link-color:               $gray-900 !default; // @goorm: original
 $dropdown-link-color:               $gray-500 !default; // @goorm: new
 // $dropdown-link-hover-color:         darken($gray-900, 5%) !default; // @goorm: original
@@ -645,6 +644,7 @@ $dropdown-link-active-bg:           $component-active-bg !default;
 $dropdown-link-disabled-color:      $gray-600 !default;
 
 $dropdown-item-padding-y:           .25rem !default;
+
 $dropdown-item-padding-x:           1.5rem !default;
 
 $dropdown-header-color:             $gray-600 !default;
@@ -958,10 +958,13 @@ $carousel-control-color:            $white !default;
 $carousel-control-width:            15% !default;
 $carousel-control-opacity:          .5 !default;
 
-$carousel-indicator-width:          30px !default;
+// $carousel-indicator-width:          30px !default;  // @goorm: original
+$carousel-indicator-width:          18px !default;  // @goorm: new
 $carousel-indicator-height:         3px !default;
 $carousel-indicator-spacer:         3px !default;
-$carousel-indicator-active-bg:      $white !default;
+// $carousel-indicator-active-bg:      $white !default; // @goorm: original
+$carousel-indicator-active-bg:      $blue-300 !default; // @goorm: new
+$carousel-indicator-bg:             #CFD1DB !default; // @goorm: add
 
 $carousel-caption-width:            70% !default;
 $carousel-caption-color:            $white !default;
