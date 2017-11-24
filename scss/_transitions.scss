@@ -16,6 +16,54 @@
   }
 }
 
+// @goorm: ßaccordion
+.accordion {
+	a {
+		text-decoration: none;
+	}
+	.depth1-icon {
+		font-size: 16px;
+		margin-right: 12px;
+	}
+	.depth1 {
+		a {
+			display: block;
+			padding-left: 15px;
+			line-height: 42px;
+			font-size: 14px;
+		}
+	}
+	.depth2 {
+		a {
+			padding-left: 43px;
+			line-height: 36px;
+			font-size: 12px;
+		}	
+	}
+	&.dark_theme {
+		a {
+			color: #FFFFFF;
+			background-color: #2B3240;
+			&.on {
+				color: #3D81E0;
+			}
+		}
+		.depth1-icon {
+			color: #4B96E6;
+		}
+		.depth2 {
+			a {
+				color: #CED0DA;
+				background-color: #222833;
+				&.on, &:hover {
+					color:#3D81E0;
+					background-color:#353F50;
+				}
+			}
+		}
+	}
+}
+
 tr {
   &.collapse.show {
     display: table-row;
