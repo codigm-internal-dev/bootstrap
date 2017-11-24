@@ -300,12 +300,13 @@ textarea {
 }
 
 table {
-  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 4px;
 }
 
 caption {
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
+  padding-top: 0.90625rem;
+  padding-bottom: 0.90625rem;
   color: #CED0DA;
   text-align: left;
   caption-side: bottom;
@@ -1577,18 +1578,23 @@ pre code {
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
+  font-size: 0.875rem;
 }
 
 .table th,
 .table td {
-  padding: 0.875rem 1.875rem;
+  padding: 0.90625rem 1.25rem;
   vertical-align: top;
   border-top: 1px solid #CED0DA;
 }
 
+.table th {
+  font-weight: 500;
+}
+
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #CED0DA;
+  border-top: 0;
 }
 
 .table tbody + tbody {
@@ -1601,29 +1607,25 @@ pre code {
 
 .table-sm th,
 .table-sm td {
-  padding: 0.3rem;
+  padding: 0.625rem 1.25rem;
+}
+
+/* @goorm: add */
+.table-lg th,
+.table-lg td {
+  padding: 1.53125rem 1.25rem;
 }
 
 .table-bordered {
   border: 1px solid #CED0DA;
 }
 
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #CED0DA;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-  border-bottom-width: 2px;
-}
-
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #FAFAFA;
 }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #F1F3F6;
 }
 
 .table-primary,
@@ -1764,16 +1766,16 @@ pre code {
 .table-active,
 .table-active > th,
 .table-active > td {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #F1F3F6;
 }
 
 .table-hover .table-active:hover {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #e1e6ec;
 }
 
 .table-hover .table-active:hover > td,
 .table-hover .table-active:hover > th {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #e1e6ec;
 }
 
 .table .thead-dark th {
@@ -2976,6 +2978,8 @@ fieldset[disabled] a.btn {
 
 .btn-dropdown-dark .btn-dropdown-icon {
   color: #18BBB8;
+  font-size: 16px;
+  margin-right: 8px;
 }
 
 .btn-dropdown-dark .btn-dropdown-org {
@@ -3062,7 +3066,7 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
-.accordion span {
+.accordion .depth1-icon {
   font-size: 16px;
   margin-right: 12px;
 }
@@ -3089,7 +3093,7 @@ input[type="button"].btn-block {
   color: #3D81E0;
 }
 
-.accordion.dark_theme span {
+.accordion.dark_theme .depth1-icon {
   color: #4B96E6;
 }
 
@@ -3123,18 +3127,21 @@ tbody.collapse.show {
   position: relative;
 }
 
-.dropdown-toggle::before {
-  content: "a";
-}
-
 .dropdown-toggle::after {
-  font-family: "grm-icon";
-  content: "\e91f";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
 }
 
-.caret-down {
-  font-family: "grm-icon";
-  content: "\e91f";
+.dropdown-toggle:empty::after {
+  margin-left: 0;
 }
 
 /* @goorm : add class */
@@ -3143,7 +3150,7 @@ tbody.collapse.show {
   padding: 0.1rem 0 !important;
   min-width: 230px !important;
   border-radius: 4px !important;
-  border: 1px solid #CED0DA;
+  border: 1px solid #CED0DA !important;
 }
 
 .dropdown-menu-goorm .dropdown-divider {
