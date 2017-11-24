@@ -368,13 +368,19 @@ $hr-margin-y:                 $spacer !default;
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 // $table-cell-padding:          .75rem !default; // @goorm: original
-$table-cell-padding-y:        .875rem !default; // @goorm: add
-$table-cell-padding-x:        1.875rem !default; // @goorm: add
-$table-cell-padding-sm:       .3rem !default;
+$table-cell-padding-y:        .90625rem !default; // @goorm: add
+$table-cell-padding-x:        1.25rem !default; // @goorm: add
+// $table-cell-padding-sm:       .3rem !default;	// @goorm: original
+$table-cell-padding-sm-y:       .625rem !default; // @goorm: add
+$table-cell-padding-sm-x:       1.25rem !default; // @goorm: add
+$table-cell-padding-lg-y:       1.53125rem !default; // @goorm: add
+$table-cell-padding-lg-x:       1.25rem !default; // @goorm: add
 
 $table-bg:                    transparent !default;
-$table-accent-bg:             rgba($black, .05) !default;
-$table-hover-bg:              rgba($black, .075) !default;
+// $table-accent-bg:             rgba($black, .05) !default;	// @goorm: original
+$table-accent-bg:             #FAFAFA !default;	// @goorm: new
+// $table-hover-bg:              rgba($black, .075) !default;	// @goorm: original
+$table-hover-bg:              #F1F3F6 !default;	// @goorm: new
 $table-active-bg:             $table-hover-bg !default;
 
 $table-border-width:          $border-width !default;

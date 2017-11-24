@@ -307,7 +307,9 @@ textarea {
 //
 
 table {
-  border-collapse: collapse; // Prevent double borders
+  // border-collapse: collapse; // Prevent double borders	@goorm: original
+	border-spacing: 0;	// @goorm: add
+	border-radius: 4px;	// @goorm: add
 }
 
 caption {

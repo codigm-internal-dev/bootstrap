@@ -7,6 +7,7 @@
   max-width: 100%;
   margin-bottom: $spacer;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  font-size: $font-size-base;	// @goorm: add
 
   th,
   td {
@@ -15,10 +16,15 @@
     vertical-align: top;
     border-top: $table-border-width solid $table-border-color;
   }
+  
+  th {
+    font-weight: $font-weight-bold;	// @goorm: new
+  }
 
   thead th {
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    // border-bottom: (2 * $table-border-width) solid $table-border-color;	// @goorm: original
+    border-top: 0;	// @goorm: add
   }
 
   tbody + tbody {
@@ -38,10 +44,17 @@
 .table-sm {
   th,
   td {
-    padding: $table-cell-padding-sm;
+    padding: $table-cell-padding-sm-y $table-cell-padding-sm-x;
   }
 }
 
+/* @goorm: add */
+.table-lg {
+  th,
+  td {
+    padding: $table-cell-padding-lg-y $table-cell-padding-lg-x;
+  }
+}
 
 // Bordered version
 //
@@ -52,13 +65,13 @@
 
   th,
   td {
-    border: $table-border-width solid $table-border-color;
+    // border: $table-border-width solid $table-border-color;	// @goorm: original
   }
 
   thead {
     th,
     td {
-      border-bottom-width: (2 * $table-border-width);
+      // border-bottom-width: (2 * $table-border-width);	// @goorm: original
     }
   }
 }
