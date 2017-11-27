@@ -318,6 +318,16 @@ tbody {
 	border-bottom-right-radius: 4px;
 }
 
+/* @goorm: add */
+tr:last-child td:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+/* @goorm: add */
+tr:last-child td:last-child {
+  border-bottom-right-radius: 4px;
+}
+
 caption {
   // padding-top: $table-cell-padding; // @goorm: original
   // padding-bottom: $table-cell-padding; // @goorm: original
