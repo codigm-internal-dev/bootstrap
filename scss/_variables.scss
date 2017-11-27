@@ -69,6 +69,7 @@ $yellow:  #FBD426 !default; // @goorm: new
 $green:   #18BB5F !default; // @goorm: new
 $teal:    #4DDFB0 !default; // @goorm: new
 $cyan:    #18BBB8 !default; // @goorm: new
+$deep-cyan:    #2A9CD3 !default; // @goorm: new
 
 $colors: () !default;
 $colors: map-merge((
@@ -90,6 +91,7 @@ $colors: map-merge((
   "green":      $green,
   "teal":       $teal,
   "cyan":       $cyan,
+  "deep-cyan":	$deep-cyan, // @goorm: new
   "white":      $white,
   "gray":       $gray-600,
   "gray-dark":  $gray-800
@@ -109,6 +111,7 @@ $colors: map-merge((
 $primary:       $blue-300 !default;
 $secondary:     $blue-400 !default;
 $thirdary:      $blue-500 !default;
+$tc:			$deep-cyan !default;
 $success:       $cyan !default;
 $info:          $blue-300 !default;
 $warning:       $orange !default;
@@ -121,6 +124,7 @@ $theme-colors: map-merge((
   "primary":    $primary,
   "secondary":  $secondary,
   "thirdary":   $thirdary, // @goorm: new
+  "tc":			$tc, // @goorm: new
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
