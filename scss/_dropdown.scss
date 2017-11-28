@@ -10,12 +10,19 @@
 }
 
 /* @goorm : add class */
+.dropdown-toggle i {
+  color: $gray-500;
+  font-size: 1rem;
+}
+
+/* @goorm : add class */
 .dropdown-menu-goorm {
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.15) !important;
   padding: 0.1rem 0 !important;
   min-width: 230px !important;
   border-radius: 4px !important;
   border: 1px solid #CED0DA !important;
+  margin-top: 0.25rem !important;
   
   .dropdown-divider {
     margin: 0.1rem 0;
