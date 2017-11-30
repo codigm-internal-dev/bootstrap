@@ -3006,8 +3006,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-white:hover {
   color: #fff;
-  background-color: #609AE9;
-  border-color: #609AE9;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* @goorm: add class */
