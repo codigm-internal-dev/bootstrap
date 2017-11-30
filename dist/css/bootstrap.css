@@ -3137,6 +3137,64 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+/* @goorm: add class */
+.btn-switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 auto;
+  width: 1.875rem;
+  height: 1rem;
+}
+
+/* @goorm: add class */
+.btn-switch input {
+  display: none;
+}
+
+/* @goorm: add class */
+.btn-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+/* @goorm: add class */
+.btn-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: .75rem;
+  width: .75rem;
+  left: .125rem;
+  top: .125rem;
+  background-color: #fff;
+  transition: .2s;
+}
+
+/* @goorm: add class */
+.btn-switch-slider.round {
+  border-radius: 5.1875rem;
+}
+
+/* @goorm: add class */
+.btn-switch-slider.round:before {
+  border-radius: 50%;
+}
+
+/* @goorm: add class */
+input:checked + .btn-switch-slider {
+  background-color: #29B312;
+}
+
+/* @goorm: add class */
+input:checked + .btn-switch-slider:before {
+  left: 1rem;
+}
+
 .fade {
   opacity: 0;
   transition: opacity 0.15s linear;
