@@ -29,7 +29,7 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: $btn-disabled-opacity;
+    // opacity: $btn-disabled-opacity;	// @goorm: original
     @include box-shadow(none);
   }
 
@@ -91,8 +91,8 @@ fieldset[disabled] a.btn {
   text-align: left;
 	font-size: 14px;
   position: relative;
-  padding-right: 35px;
-  padding-left: 13px;
+  padding-right: .8125rem;
+  padding-left: .8125rem;
   
   &.disabled,
   &:disabled {
@@ -121,6 +121,23 @@ fieldset[disabled] a.btn {
     outline: 0;
     box-shadow: none;
     border: 1px solid #609AE9;
+  }
+  
+  /* @goorm: add class */
+  &.btn-sm {
+    padding: .21875rem .8125rem;
+  }
+  
+  /* @goorm: add class */
+  &.btn-lg {
+    padding-left: .8125rem;
+    padding-right: .8125rem;
+  }
+  
+  /* @goorm : add class */
+	.caret {
+    color: $gray-500;
+    margin-left: auto;
   }
 }
 

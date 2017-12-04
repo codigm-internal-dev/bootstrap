@@ -147,7 +147,8 @@ $yiq-text-light: $white !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:              true !default;
+// $enable-caret:              true !default;	// @goorm: original
+$enable-caret:              false !default;	// @goorm: new
 $enable-rounded:            true !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
@@ -409,18 +410,20 @@ $table-dark-color:            $body-bg !default;
 
 // $input-btn-padding-y:         .375rem !default;// @goorm: original
 $input-btn-padding-y:         .34375rem !default;// @goorm: new
-$input-btn-padding-x:         .75rem !default;
+// $input-btn-padding-x:         .75rem !default;// @goorm: original
+$input-btn-padding-x:         .75rem !default;// @goorm: new
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
 $input-btn-focus-color:       rgba(theme-color("primary"), .25) !default;
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
-$input-btn-padding-y-xs:    .125rem !default; // @goorm: add
+$input-btn-padding-y-xs:    .0625rem !default; // @goorm: add
 $input-btn-padding-x-xs:    .3125rem !default; // @goorm: add
 $input-btn-line-height-xs:  $line-height-base !default; // @goorm: add
 
-$input-btn-padding-y-sm:      .25rem !default;
+// $input-btn-padding-y-sm:      .25rem !default;	// @goorm: original
+$input-btn-padding-y-sm:      .15625rem !default;	// @goorm: new
 // $input-btn-padding-x-sm:      .5rem !default; // @goorm: original
 $input-btn-padding-x-sm:      .625rem !default; // @goorm: new
 // $input-btn-line-height-sm:    $line-height-sm !default; // @goorm: original
@@ -449,7 +452,8 @@ $btn-padding-y-xs:            $input-btn-padding-y-xs !default;
 $btn-padding-x-xs:            $input-btn-padding-x-xs !default;
 $btn-line-height-xs:          $input-btn-line-height-xs !default;
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+// $btn-padding-y-sm:            $input-btn-padding-y-sm !default;	// @goorm: original
+$btn-padding-y-sm:            .3125rem !default;	// @goorm: new
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
 $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
@@ -528,7 +532,8 @@ $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$inpu
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$form-text-margin-top:                  .25rem !default;
+// $form-text-margin-top:                  .25rem !default;	// @goorm: original
+$form-text-margin-top:                  .3125rem !default;	// @goorm: new
 
 $form-check-margin-bottom:              .5rem !default;
 $form-check-input-gutter:               1.25rem !default;
@@ -863,13 +868,16 @@ $modal-title-line-height:           $line-height-base !default;
 
 $modal-content-bg:               $white !default;
 $modal-content-border-color:     rgba($black, .2) !default;
+$modal-content-border-top-color:     $blue-100 !default; // @goorm: new
 $modal-content-border-width:     $border-width !default;
+$modal-content-border-top-width:     .25rem !default; // @goorm: new
 $modal-content-box-shadow-xs:    0 .25rem .5rem rgba($black, .5) !default;
 $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5) !default;
 
 $modal-backdrop-bg:           $black !default;
 $modal-backdrop-opacity:      .5 !default;
-$modal-header-border-color:   $gray-200 !default;
+// $modal-header-border-color:   $gray-200 !default; // @goorm: original
+$modal-header-border-color:   #DFE3E9 !default; // @goorm: new
 $modal-footer-border-color:   $modal-header-border-color !default;
 $modal-header-border-width:   $modal-content-border-width !default;
 $modal-footer-border-width:   $modal-header-border-width !default;

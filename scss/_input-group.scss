@@ -27,12 +27,17 @@
     }
     
     /* @goorm: add */
-    + .gi {
+    + .input-label-addon {
       position: absolute;
-      top: calc((100% - 16px) / 2);
-      right: 14px;
+      right: .5rem;
       z-index: 2;
       color: $gray-500;
+      -ms-flex-item-align: center !important;
+    	align-self: center !important;
+      
+      .gi {
+        right: .375rem;
+      }
     }
   }
 }
@@ -121,7 +126,8 @@
   
   /* @goorm: add */
   > .gi {
-    margin-left: 2px;
+    margin-left: $input-btn-padding-x-xs;
+    top: 0;
   }
 }
 

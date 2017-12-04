@@ -352,7 +352,8 @@ th {
 label {
   // Allow labels to use `margin` for spacing.
   display: inline-block;
-  margin-bottom: .5rem;
+  // margin-bottom: .5rem;	// @goorm: original
+  margin-bottom: .3125rem;	// @goorm: new
 }
 
 // Remove the default `border-radius` that macOS Chrome adds.

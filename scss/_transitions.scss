@@ -21,14 +21,14 @@
 	a {
 		text-decoration: none;
 	}
-	.depth1-icon {
+	.depth1-icon, .depth2-icon {
 		font-size: 16px;
 		margin-right: 12px;
 	}
 	.depth1 {
 		a {
 			display: block;
-			padding-left: 15px;
+			padding: 0 15px;
 			line-height: 42px;
 			font-size: 14px;
 		}
@@ -39,6 +39,18 @@
 			line-height: 36px;
 			font-size: 12px;
 		}	
+	}
+	.down_caret {
+		display: block;
+	}
+	.right_caret {
+		display: none;
+	}
+	.collapsed .right_caret {
+		display: block;
+	}
+	.collapsed .down_caret {
+		display: none;
 	}
 	&.dark_theme {
 		a {

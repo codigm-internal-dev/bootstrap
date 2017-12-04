@@ -30,8 +30,11 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    background-color: $background;
-    border-color: $border;
+    // background-color: $background;	// @goorm: original
+    background-color: $gray-400;	// @goorm: new
+    // border-color: $border;	// @goorm: original
+    border-color: $gray-400;	// @goorm: new
+    color: #E8E9EE;	// @goorm: add
   }
 
   &:not([disabled]):not(.disabled):active,
@@ -73,8 +76,11 @@
 
   &.disabled,
   &:disabled {
-    color: $color;
-    background-color: transparent;
+    // color: $color;	// @goorm: original
+    color: $gray-400;	// @goorm: new
+    // background-color: transparent;	// @goorm: original
+    background-color: #F5F5F5;	// @goorm: new
+    border-color: $gray-400;	// @goorm: add
   }
 
   &:not([disabled]):not(.disabled):active,

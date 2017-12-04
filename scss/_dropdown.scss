@@ -7,12 +7,26 @@
 .dropdown-toggle {
   // Generate the caret automatically
   @include caret;
+  
+  display: -ms-flexbox !important;	// @goorm: add
+  display: flex !important;	// @goorm: add
+  -ms-flex-align: center !important;	// @goorm: add
+  align-items: center !important;	// @goorm: add
 }
 
 /* @goorm : add class */
 .dropdown-toggle i {
-  color: $gray-500;
   font-size: 1rem;
+}
+
+/* @goorm : add class */
+.dropdown-toggle:not(.nav-link) .caret {
+  top: 0;
+}
+
+/* @goorm : add class */
+.dropdown-toggle:not(.btn-dropdown) .caret {
+  margin-left: .1875rem;
 }
 
 /* @goorm : add class */
@@ -21,8 +35,11 @@
   padding: 0.1rem 0 !important;
   min-width: 230px !important;
   border-radius: 4px !important;
-  border: 1px solid #CED0DA !important;
   margin-top: 0.25rem !important;
+  
+  &:not(.dropdown-menu-dark) {
+    border-color: $gray-400 !important;
+  }
   
   .dropdown-divider {
     margin: 0.1rem 0;
@@ -88,6 +105,24 @@
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+}
+
+/* @goorm: add class */
+.dropdown-menu-dark {
+  border: 1px solid #5F6675;
+  background: #292D39;
+  color: $white;
+  
+  .dropdown-item {
+    color: $white;
+    
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      background-color: #353F50;
+    }
+  }
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
