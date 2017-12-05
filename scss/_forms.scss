@@ -200,7 +200,9 @@ select.form-control-lg {
 .form-text {
   display: block;
   margin-top: $form-text-margin-top;
+  
   color: $gray-500;	// @goorm: add
+  
   -ms-flex-align: center !important;	// @goorm: add
   align-items: center !important;	// @goorm: add
   display: -ms-flexbox !important;	// @goorm: add

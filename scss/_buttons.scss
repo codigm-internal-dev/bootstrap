@@ -238,6 +238,23 @@ fieldset[disabled] a.btn {
   }
 }
 
+/* @goorm: add class */
+.btn-block-goorm {
+  min-width: 6.25rem;
+  
+  &.btn-xs {
+    min-width: 4.25rem;
+  }
+  
+  &.btn-sm {
+    min-width: 5.375rem;
+  }
+  
+  &.btn-lg {
+    min-width: 8.125rem;
+  }
+}
+
 // Specificity overrides
 input[type="submit"],
 input[type="reset"],

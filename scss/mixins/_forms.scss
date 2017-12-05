@@ -30,9 +30,21 @@
 
   .#{$state}-feedback {
     display: none;
-    margin-top: .25rem;
-    font-size: .875rem;
+    // margin-top: .25rem;	// @goorm: original
+    margin-top: $form-text-margin-top;	// @goorm: new
+    // font-size: .875rem;	// @goorm: original
+    font-size: 85%;	// @goorm: new
     color: $color;
+    
+    display: -ms-flexbox !important;	// @goorm: add
+    display: flex !important;	// @goorm: add
+    -ms-flex-align: center !important;	// @goorm: add
+    align-items: center !important;	// @goorm: add
+    
+    /* @goorm: add class */
+    .gi {
+      margin-right: .3125rem;
+    }
   }
 
   .#{$state}-tooltip {

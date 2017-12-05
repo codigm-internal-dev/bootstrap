@@ -20,6 +20,14 @@
 .accordion {
 	a {
 		text-decoration: none;
+    
+    display: -ms-flexbox !important;
+    display: flex !important;
+    
+    color: inherit;
+    
+    -ms-flex-align: center !important;
+    align-items: center !important;
 	}
 	.depth1-icon, .depth2-icon {
 		font-size: 16px;
@@ -40,18 +48,35 @@
 			font-size: 12px;
 		}	
 	}
+  
+  .caret {
+    color: $gray-500;
+    font-size: 112.5%;
+    
+    margin-left: auto !important;
+  }
+  
 	.down_caret {
 		display: block;
 	}
-	.right_caret {
+  
+	.right_caret,
+  .caret-collapsed {
 		display: none;
 	}
-	.collapsed .right_caret {
-		display: block;
-	}
-	.collapsed .down_caret {
-		display: none;
-	}
+  
+  .collapsed {
+    .right_caret,
+    .caret-collapsed {
+      display: block;
+    }
+    
+    .down_caret,
+    .caret-opened {
+      display: none;
+    }
+  }
+  
 	&.dark_theme {
 		a {
 			color: #FFFFFF;

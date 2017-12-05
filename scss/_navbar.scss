@@ -71,6 +71,11 @@
     display: flex !important;
     -ms-flex-align: center !important;
     align-items: center !important;
+    
+    .dropdown-menu-goorm {
+      min-width: 9.375rem !important;
+      margin-left: .5rem;
+    }
   }
 
   .nav-link {

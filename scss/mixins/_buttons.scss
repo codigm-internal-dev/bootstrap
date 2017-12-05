@@ -34,7 +34,7 @@
     background-color: $gray-400;	// @goorm: new
     // border-color: $border;	// @goorm: original
     border-color: $gray-400;	// @goorm: new
-    color: #E8E9EE;	// @goorm: add
+    color: rgba($white, .54);	// @goorm: add
   }
 
   &:not([disabled]):not(.disabled):active,

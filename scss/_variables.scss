@@ -261,6 +261,7 @@ $border-color:                $gray-500 !default; // @goorm: new
 // $border-radius:               .25rem !default;// @goorm: original
 $border-radius:               3px !default;// @goorm: new
 $border-radius-lg:            .3rem !default;
+$border-radius-md:            .25rem !default;	// @goorm: add
 $border-radius-sm:            .2rem !default;
 
 $component-active-color:      $white !default;
@@ -571,7 +572,8 @@ $custom-control-indicator-active-color:         $white !default;
 $custom-control-indicator-active-bg:            lighten(theme-color("primary"), 35%) !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 
-$custom-checkbox-indicator-border-radius:       $border-radius !default;
+// $custom-checkbox-indicator-border-radius:       $border-radius !default;	// @goorm: original
+$custom-checkbox-indicator-border-radius:       $border-radius-md !default;	// @goorm: new
 $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 $custom-checkbox-indicator-indeterminate-bg:    theme-color("primary") !default;
@@ -775,11 +777,15 @@ $jumbotron-bg:                      $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:                     .75rem !default;
-$card-spacer-x:                     1.25rem !default;
+// $card-spacer-y:                     .75rem !default;	// @goorm: original
+$card-spacer-y:                     .625rem !default;	// @goorm: new
+// $card-spacer-x:                     1.25rem !default;	// @goorm: original
+$card-spacer-x:                     .8125rem !default;	// @goorm: new
 $card-border-width:                 $border-width !default;
-$card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .125) !default;
+// $card-border-radius:                $border-radius !default;	// @goorm: original
+$card-border-radius:                $border-radius-md !default;	// @goorm: new
+// $card-border-color:                 rgba($black, .125) !default;	// @goorm: original
+$card-border-color:                 $gray-400 !default;	// @goorm: new
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                       rgba($black, .03) !default;
 $card-bg:                           $white !default;
@@ -859,7 +865,8 @@ $badge-pill-border-radius:          10rem !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:         1rem !default;
+// $modal-inner-padding:         1rem !default;	// @goorm: original
+$modal-inner-padding:         .9375rem !default;	// @goorm: new
 
 $modal-dialog-margin:         .5rem !default;
 $modal-dialog-margin-y-sm-up: 1.75rem !default;
@@ -882,6 +889,8 @@ $modal-footer-border-color:   $modal-header-border-color !default;
 $modal-header-border-width:   $modal-content-border-width !default;
 $modal-footer-border-width:   $modal-header-border-width !default;
 $modal-header-padding:        1rem !default;
+$modal-header-padding-y:        1.125rem !default;	// @goorm: add
+$modal-header-padding-x:        .9375rem !default;	// @goorm: add
 
 $modal-lg:                          800px !default;
 $modal-md:                          500px !default;
@@ -1001,7 +1010,7 @@ $carousel-transition:               transform .6s ease !default;
 // $close-font-weight:                 $font-weight-bold !default; // @goorm: original
 $close-font-weight:                 600 !default; // @goorm: new
 // $close-color:                       $black !default; // @goorm: original
-$close-color:                       $white !default; // @goorm: new
+$close-color:                       $gray-500 !default; // @goorm: new
 // $close-text-shadow:                 0 1px 0 $white !default; // @goorm: original (not using)
 
 // Code

@@ -10,8 +10,10 @@
   word-wrap: break-word;
   background-color: $card-bg;
   background-clip: border-box;
-  border: $card-border-width solid $card-border-color;
+  // border: $card-border-width solid $card-border-color;	// @goorm: original
   @include border-radius($card-border-radius);
+  
+  box-shadow: 0 .0625rem .1875rem 0 rgba(0,0,0,0.2);	// @goorm: add
 
   > hr {
     margin-right: 0;
@@ -28,6 +30,64 @@
     .list-group-item:last-child {
       @include border-bottom-radius($card-border-radius);
     }
+  }
+  
+  /* @goorm: add class */
+  &:hover {
+    box-shadow: 0 .25rem 1rem 0 rgba(0,0,0,0.2);
+  }
+  
+  /* @goorm: add class */
+  &.card-horizontal {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    
+    img {
+      height: 100% !important;
+    }
+    
+    .card-body {
+      margin: 0;
+    }
+    
+    .card-title {
+      margin-bottom: .1875rem;
+    }
+  }
+}
+
+/* @goorm: add class */
+.card-lecture {
+  @include border-radius(.1875rem);
+  box-shadow: .125rem .125rem .1875rem 0 rgba(0,0,0,0.2);
+  width: 16.375rem;
+  
+  img {
+    height: 8.625rem;
+  }
+  
+  .card-body {
+    padding: 1rem 1.25rem;
+    height: 8.875rem;
+  }
+  
+  .card-title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    height: $headings-line-height * 2em;
+    white-space: normal;
+    word-wrap: break-word;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+  }
+  
+  .card-footer {
+    margin: 0 20px;
+    border-color: #E7E8ED;
   }
 }
 
@@ -60,11 +120,20 @@
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
   // as much space as possible, ensuring footers are aligned to the bottom.
   flex: 1 1 auto;
-  padding: $card-spacer-x;
+  // padding: $card-spacer-x;	// @goorm: original
+  padding: $card-spacer-y $card-spacer-x;	// @goorm: new
+  
+  margin-bottom: .5rem;	// @goorm: add
+  
+  /* @goorm: add class */
+  img + & {
+    padding: .9375rem;
+  }
 }
 
 .card-title {
-  margin-bottom: $card-spacer-y;
+  // margin-bottom: $card-spacer-y;	// @goorm: original
+  margin-bottom: .5rem;	// @goorm: new
 }
 
 .card-subtitle {
@@ -93,8 +162,11 @@
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  background-color: $card-cap-bg;
+  // background-color: $card-cap-bg;	// @goorm: original
   border-bottom: $card-border-width solid $card-border-color;
+  
+  font-size: $font-size-lg;	// @goorm: add
+  font-weight: $font-weight-bold;	// @goorm: add
 
   &:first-child {
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
@@ -109,7 +181,7 @@
 
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
-  background-color: $card-cap-bg;
+  // background-color: $card-cap-bg;	// @goorm: original
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
@@ -158,6 +230,12 @@
 .card-img-bottom {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
   @include border-bottom-radius($card-inner-border-radius);
+}
+
+/* @goorm: add */
+.card-img-left {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-left-radius($card-inner-border-radius);
 }
 
 /* @goorm: add */
