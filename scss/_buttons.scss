@@ -116,7 +116,8 @@ fieldset[disabled] a.btn {
   }
   
   &:focus,
-  &.focus {
+  &.focus,
+  &:not(.disabled):hover {
     outline: 0;
     box-shadow: none;
     border: 1px solid #609AE9;

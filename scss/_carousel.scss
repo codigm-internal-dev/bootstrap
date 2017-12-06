@@ -76,7 +76,7 @@
   width: $carousel-control-width;
   color: $carousel-control-color;
   text-align: center;
-  opacity: $carousel-control-opacity;
+  // opacity: $carousel-control-opacity;	// @goorm: original
   // We can't have a transition here because WebKit cancels the carousel
   // animation if you trip this while in the middle of another animation.
 
@@ -109,12 +109,28 @@
   height: $carousel-control-icon-width;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
+  
+  border-radius: 50%;	// @goorm: add
+  background-color: $white;	// @goorm: add
+  color: $gray-400;	// @goorm: add
+  
+  -ms-flex-align: center !important;	// @goorm: add
+  align-items: center !important;	// @goorm: add
+  -ms-flex-pack: center !important;	// @goorm: add
+  justify-content: center !important;	// @goorm: add
+  display: -ms-flexbox !important;	// @goorm: add
+  display: flex !important;	// @goorm: add
+  
+  /* @goorm: add class */
+  i {
+    top: 0;
+  }
 }
 .carousel-control-prev-icon {
-  background-image: $carousel-control-prev-icon-bg;
+  // background-image: $carousel-control-prev-icon-bg;	// @goorm: original
 }
 .carousel-control-next-icon {
-  background-image: $carousel-control-next-icon-bg;
+  // background-image: $carousel-control-next-icon-bg;	// @goorm: original
 }
 
 
@@ -146,7 +162,9 @@
     margin-left: $carousel-indicator-spacer;
     text-indent: -999px;
     // background-color: rgba($carousel-indicator-active-bg, .5);  // @goorm: original
-	background-color: $carousel-indicator-bg;  // @goorm: new
+		background-color: $carousel-indicator-bg;  // @goorm: new
+    
+    border-radius: 6.25rem;	// @goorm: add
 
     // Use pseudo classes to increase the hit area by 10px on top and bottom.
     &::before {

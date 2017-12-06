@@ -20,6 +20,11 @@
 .accordion {
   &.side_nav {
     border: 1px solid $gray-400;
+    
+    a:hover {
+      background-color: $dropdown-link-hover-bg;
+      color: #4F85E3;
+    }
   }
   
 	a {
@@ -32,16 +37,17 @@
     
     -ms-flex-align: center !important;
     align-items: center !important;
-    
-    &:hover {
-      background-color: $dropdown-link-hover-bg;
-      color: #4F85E3;
-    }
 	}
   
+  @for $i from 1 through 2 {
+    .depth#{$i}-icon {
+      margin-right: 8px;
+  	}
+  }
+
 	.depth-icon {
-		margin-right: 1.25rem;
-	}
+    margin-right: 1.25rem;
+  }
   
   i {
     color: $gray-500;
@@ -60,6 +66,7 @@
 	.depth2 {
 		> a {
 			padding: .1875rem 0 .1875rem 3.4375rem;
+      line-height: 2.25rem;
 			&.on, &:hover {
 				background-color: $dropdown-link-hover-bg;
 				color: #4F85E3;

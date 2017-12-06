@@ -6,17 +6,24 @@
   list-style: none;
   // background-color: $breadcrumb-bg; // @goorm: original (not using)
   // @include border-radius($border-radius); // @goorm: original (not using)
+  
+  &.breadcrumb-steps {
+    /* @goorm: add class */
+    .breadcrumb-item + .breadcrumb-item {
+      margin-left: 1.0625rem;
+    }
+  }
 }
 
 .breadcrumb-item {
   // The separator between breadcrumbs (by default, a forward-slash: "/")
-  + .breadcrumb-item::before {
-    display: inline-block; // Suppress underlining of the separator in modern browsers
-    padding-right: $breadcrumb-item-padding;
-    padding-left: $breadcrumb-item-padding;
-    color: $breadcrumb-divider-color;
-    content: "#{$breadcrumb-divider}";
-  }
+  // + .breadcrumb-item::before {	// @goorm: original
+  //   display: inline-block; // Suppress underlining of the separator in modern browsers
+  //   padding-right: $breadcrumb-item-padding;
+  //   padding-left: $breadcrumb-item-padding;
+  //   color: $breadcrumb-divider-color;
+  //   content: "#{$breadcrumb-divider}";
+  // }
 
   // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
   // without `<ul>`s. The `::before` pseudo-element generates an element
@@ -31,18 +38,58 @@
   + .breadcrumb-item:hover::before {
     text-decoration: none;
   }
+  
+  /* @goorm: add class */
+  .step {
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.6875rem;
+    margin-right: .75rem;
+  }
 
   &.active {
     color: $breadcrumb-active-color;
+    
+    /* @goorm: add class */
+  	.step {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+  
+  /* @goorm: add class */
+  &:not(.active) {
+  	.step {
+    	border: 1px solid $gray-400;
+      line-height: 1.5625rem;
+    }
   }
   
   // @goorm: add
   // Font Size
   &.breadcrumb-sm {
     font-size: $font-size-sm;
+    
+    i {
+      padding: 0 .1875rem;
+    }
   }
   &.breadcrumb-lg {
     font-size: $font-size-lg;
+    
+    i {
+      padding: 0 .4375rem;
+    }
+  }
+  
+  /* @goorm: add class */
+  i {
+    color: $gray-500;
+    padding: 0 .4728125rem;
   }
 }
 

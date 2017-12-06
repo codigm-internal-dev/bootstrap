@@ -1,7 +1,8 @@
 .pagination {
   display: flex;
   @include list-unstyled();
-  @include border-radius();
+  // @include border-radius();	// @goorm: original
+  @include border-radius($border-radius-md);	// @goorm: new
 }
 
 .page-link {
@@ -26,20 +27,20 @@
   &:first-child {
     .page-link {
       margin-left: 0;
-      @include border-left-radius($border-radius);
+      @include border-left-radius($border-radius-md);
     }
   }
   &:last-child {
     .page-link {
-      @include border-right-radius($border-radius);
+      @include border-right-radius($border-radius-md);
     }
   }
 
   &.active .page-link {
     z-index: 1;
     color: $pagination-active-color;
-    background-color: $pagination-active-bg;
-    border-color: $pagination-active-border-color;
+    // background-color: $pagination-active-bg;	// @goorm: original
+    // border-color: $pagination-active-border-color;	// @goorm: original
   }
 
   &.disabled .page-link {
@@ -47,6 +48,21 @@
     pointer-events: none;
     background-color: $pagination-disabled-bg;
     border-color: $pagination-disabled-border-color;
+  }
+  
+  /* @goorm: add class */
+  &.other-pages {
+    .page-link {
+      padding: $pagination-pages-padding;
+      color: $gray-400;
+    }
+  }
+  
+  /* @goorm: add class */
+  &.page-ellipsis {
+    .page-link {
+      padding: $pagination-pages-padding $pagination-ellipsis-padding-x;
+    }
   }
 }
 

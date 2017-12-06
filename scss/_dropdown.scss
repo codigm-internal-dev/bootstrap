@@ -25,7 +25,7 @@
 }
 
 /* @goorm : add class */
-.dropdown-toggle:not(.btn-dropdown) .caret {
+.dropdown-toggle:not(.btn-dropdown):not(.dropdown-toggle-split) .caret {
   margin-left: .1875rem;
 }
 
