@@ -20,8 +20,8 @@
   z-index: -1; // Put the input behind the label so it doesn't overlay text
   opacity: 0;
 
-  &:checked ~ .custom-control-indicator,
-  &:indeterminate ~ .custom-control-indicator {	// @goorm: add class
+  &:checked:not(:disabled) ~ .custom-control-indicator,
+  &:indeterminate:not(:disabled) ~ .custom-control-indicator {	// @goorm: add class
     color: $custom-control-indicator-checked-color;
     // @include gradient-bg($custom-control-indicator-checked-bg);	// @goorm: original
     @include gradient-directional(#29B312 0%, #57D842 100%, 0deg);	// @goorm: new
@@ -32,14 +32,14 @@
   
   /* @goorm: add class */
   &:checked ~ .custom-control-indicator {
-    .checkbox-selected {
+    .input-selected {
       display: block;
     }
   }
   
   /* @goorm: add class */
   &:indeterminate ~ .custom-control-indicator {
-    .checkbox-indeterminate {
+    .input-indeterminate {
       display: block;
     }
   }
@@ -58,6 +58,8 @@
   &:disabled {
     ~ .custom-control-indicator {
       background-color: $custom-control-indicator-disabled-bg;
+      background-image: unset;	// @goorm: add
+      color: $custom-control-description-disabled-color;	// @goorm: add
     }
 
     ~ .custom-control-description {
@@ -86,7 +88,7 @@
   // background-size: $custom-control-indicator-bg-size;	// @goorm: original
   @include box-shadow($custom-control-indicator-box-shadow);
   
-  border: 1px solid $gray-400;	// @goorm: add
+  border: 1px solid $input-border-color;	// @goorm: add
   
   display: -ms-flexbox !important;	// @goorm: add
   display: flex !important;	// @goorm: add
@@ -133,7 +135,7 @@
   }
 
   .custom-control-input:checked ~ .custom-control-indicator {
-    background-image: $custom-radio-indicator-icon-checked;
+    // background-image: $custom-radio-indicator-icon-checked;	// @goorm: original
   }
 }
 

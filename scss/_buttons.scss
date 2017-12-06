@@ -77,7 +77,6 @@ fieldset[disabled] a.btn {
   &:hover {
     color: $white;
     background-color: rgba(0, 0, 0, 0.3);
-    // border-color: $primary; // @goorm: new
   }
 }
 
@@ -271,11 +270,24 @@ input[type="button"] {
   margin: 0 0 0 auto;
   width: 1.875rem;
   height: 1rem;
-}
-
-/* @goorm: add class */
-.btn-switch input {
-  display: none;
+  
+  &.btn-switch-lg {
+    width: 2.375rem;
+  	height: 1.25rem;
+    
+    .btn-switch-slider:before {
+      height: 1rem;
+    	width: 1rem;
+    }
+    
+    input:checked + .btn-switch-slider:before {
+      left: 1.25rem;
+    }
+  }
+  
+  input {
+    display: none;
+  }
 }
 
 /* @goorm: add class */
@@ -286,40 +298,59 @@ input[type="button"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: $gray-400;
   -webkit-transition: .4s;
   transition: .4s;
+  
+	&:before {
+    position: absolute;
+    content: "";
+    height: .75rem;
+    width: .75rem;
+    left: .125rem;
+    top: .125rem;
+    background-color: $white;
+    -webkit-transition: .2s;
+    transition: .2s;
+  }
+
+  &.round {
+    border-radius: 5.25rem;
+    
+    &:before {
+      border-radius: $custom-radio-indicator-border-radius;
+    }
+  }
+  
+  input:checked:not(:disabled) + & {
+    background-color: #29B312;
+  }
+  
+  input:disabled + & {
+    background-color: #DFE4E9;
+    
+    &:before {
+      opacity: 0.5;
+    }
+  }
+  
+  input:checked + &:before {
+    left: 1rem;
+  }
 }
 
 /* @goorm: add class */
-.btn-switch-slider:before {
-  position: absolute;
-  content: "";
-  height: .75rem;
-  width: .75rem;
-  left: .125rem;
-  top: .125rem;
-  background-color: $white;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-/* @goorm: add class */
-.btn-switch-slider.round {
-  border-radius: 5.1875rem;
-}
-
-/* @goorm: add class */
-.btn-switch-slider.round:before {
-  border-radius: $custom-radio-indicator-border-radius;
-}
-
-/* @goorm: add class */
-input:checked + .btn-switch-slider {
-  background-color: #29B312;
-}
-
-/* @goorm: add class */
-input:checked + .btn-switch-slider:before {
-  left: 1rem;
+.btn-social {
+  background-color: $gray-700;
+  border-radius: 50% !important;
+  color: $white;
+  padding: .4375rem;
+  
+  &:hover {
+    color: $white;
+  }
+  
+  i {
+    font-size: $font-size-base;
+  }
 }

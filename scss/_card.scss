@@ -116,6 +116,25 @@
   }
 }
 
+/* @goorm: add class */
+.well {
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  &.well-sm {
+    .card-body {
+      padding: $card-spacer-y;
+    }
+  }
+  
+  &.well-lg {
+    .card-body {
+      padding: 1.5rem;
+    }
+  }
+}
+
 .card-body {
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
   // as much space as possible, ensuring footers are aligned to the bottom.

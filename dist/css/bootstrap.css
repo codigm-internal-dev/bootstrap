@@ -323,8 +323,8 @@ tr:last-child td:last-child {
 }
 
 caption {
-  padding-top: 0.90625rem;
-  padding-bottom: 0.90625rem;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
   color: #CED0DA;
   text-align: left;
   caption-side: bottom;
@@ -1616,9 +1616,42 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.90625rem 1.25rem;
+  padding: 0.9375rem 1.25rem;
   vertical-align: top;
   border-top: 1px solid #CED0DA;
+  /* @goorm: add class */
+  /* @goorm: add class */
+  /* @goorm: add class */
+}
+
+.table th.control-input,
+.table td.control-input {
+  vertical-align: unset;
+  width: 2.5rem;
+}
+
+.table th.manage,
+.table td.manage {
+  padding-top: .4375rem;
+  padding-bottom: .4375rem;
+  vertical-align: middle;
+}
+
+.table th.manage button,
+.table td.manage button {
+  margin-right: .625rem;
+}
+
+.table th .custom-control,
+.table td .custom-control {
+  min-height: unset;
+  padding: 0;
+  margin: 0;
+}
+
+.table th .custom-control .custom-control-indicator,
+.table td .custom-control .custom-control-indicator {
+  top: .125rem;
 }
 
 .table th {
@@ -1640,13 +1673,13 @@ pre code {
 
 .table-sm th,
 .table-sm td {
-  padding: 0.625rem 1.25rem;
+  padding: 0.5rem 1.25rem;
 }
 
 /* @goorm: add */
 .table-lg th,
 .table-lg td {
-  padding: 1.53125rem 1.25rem;
+  padding: 1.5625rem 1.25rem;
 }
 
 .table-bordered {
@@ -3239,7 +3272,20 @@ input[type="button"].btn-block {
   height: 1rem;
 }
 
-/* @goorm: add class */
+.btn-switch.btn-switch-lg {
+  width: 2.375rem;
+  height: 1.25rem;
+}
+
+.btn-switch.btn-switch-lg .btn-switch-slider:before {
+  height: 1rem;
+  width: 1rem;
+}
+
+.btn-switch.btn-switch-lg input:checked + .btn-switch-slider:before {
+  left: 1.25rem;
+}
+
 .btn-switch input {
   display: none;
 }
@@ -3252,11 +3298,10 @@ input[type="button"].btn-block {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #CED0DA;
   transition: .4s;
 }
 
-/* @goorm: add class */
 .btn-switch-slider:before {
   position: absolute;
   content: "";
@@ -3268,24 +3313,44 @@ input[type="button"].btn-block {
   transition: .2s;
 }
 
-/* @goorm: add class */
 .btn-switch-slider.round {
-  border-radius: 5.1875rem;
+  border-radius: 5.25rem;
 }
 
-/* @goorm: add class */
 .btn-switch-slider.round:before {
   border-radius: 50%;
 }
 
-/* @goorm: add class */
-input:checked + .btn-switch-slider {
+input:checked:not(:disabled) + .btn-switch-slider {
   background-color: #29B312;
 }
 
-/* @goorm: add class */
+input:disabled + .btn-switch-slider {
+  background-color: #DFE4E9;
+}
+
+input:disabled + .btn-switch-slider:before {
+  opacity: 0.5;
+}
+
 input:checked + .btn-switch-slider:before {
   left: 1rem;
+}
+
+/* @goorm: add class */
+.btn-social {
+  background-color: #494E5F;
+  border-radius: 50% !important;
+  color: #fff;
+  padding: .4375rem;
+}
+
+.btn-social:hover {
+  color: #fff;
+}
+
+.btn-social i {
+  font-size: 0.875rem;
 }
 
 .fade {
@@ -3305,6 +3370,10 @@ input:checked + .btn-switch-slider:before {
   display: block;
 }
 
+.accordion.side_nav {
+  border: 1px solid #CED0DA;
+}
+
 .accordion a {
   text-decoration: none;
   display: -ms-flexbox !important;
@@ -3314,26 +3383,38 @@ input:checked + .btn-switch-slider:before {
   align-items: center !important;
 }
 
-.accordion .depth1-icon, .accordion .depth2-icon {
-  font-size: 16px;
-  margin-right: 12px;
+.accordion a:hover {
+  background-color: #F1F3F6;
+  color: #4F85E3;
 }
 
-.accordion .depth1 a {
-  display: block;
-  padding: 0 15px;
-  line-height: 42px;
-  font-size: 14px;
+.accordion .depth-icon {
+  margin-right: 1.25rem;
 }
 
-.accordion .depth2 a {
-  padding-left: 43px;
-  line-height: 36px;
-  font-size: 12px;
+.accordion i {
+  color: #90929E;
+}
+
+.accordion .depth1 > a {
+  padding: .625rem 1.125rem;
+}
+
+.accordion .depth1 > a.on, .accordion .depth1 > a:hover {
+  background-color: #F1F3F6;
+  color: #4F85E3;
+}
+
+.accordion .depth2 > a {
+  padding: .1875rem 0 .1875rem 3.4375rem;
+}
+
+.accordion .depth2 > a.on, .accordion .depth2 > a:hover {
+  background-color: #F1F3F6;
+  color: #4F85E3;
 }
 
 .accordion .caret {
-  color: #90929E;
   font-size: 112.5%;
   margin-left: auto !important;
 }
@@ -3362,7 +3443,8 @@ input:checked + .btn-switch-slider:before {
   background-color: #2B3240;
 }
 
-.accordion.dark_theme a.on {
+.accordion.dark_theme a.on, .accordion.dark_theme a:hover {
+  background-color: #353F50;
   color: #3D81E0;
 }
 
@@ -3971,19 +4053,19 @@ tbody.collapse.show {
   /* @goorm: add class */
 }
 
-.custom-control-input:checked ~ .custom-control-indicator,
-.custom-control-input:indeterminate ~ .custom-control-indicator {
+.custom-control-input:checked:not(:disabled) ~ .custom-control-indicator,
+.custom-control-input:indeterminate:not(:disabled) ~ .custom-control-indicator {
   color: #fff;
   background-image: linear-gradient(0deg, #29B312 0%, #57D842 100%);
   background-repeat: repeat-x;
   border-color: #27AA13;
 }
 
-.custom-control-input:checked ~ .custom-control-indicator .checkbox-selected {
+.custom-control-input:checked ~ .custom-control-indicator .input-selected {
   display: block;
 }
 
-.custom-control-input:indeterminate ~ .custom-control-indicator .checkbox-indeterminate {
+.custom-control-input:indeterminate ~ .custom-control-indicator .input-indeterminate {
   display: block;
 }
 
@@ -3997,11 +4079,13 @@ tbody.collapse.show {
 }
 
 .custom-control-input:disabled ~ .custom-control-indicator {
-  background-color: #FAFAFA;
+  background-color: #F5F5F5;
+  background-image: unset;
+  color: #90929E;
 }
 
 .custom-control-input:disabled ~ .custom-control-description {
-  color: #6B727F;
+  color: #90929E;
 }
 
 .custom-control-indicator {
@@ -4042,10 +4126,6 @@ tbody.collapse.show {
 
 .custom-radio .custom-control-indicator {
   border-radius: 50%;
-}
-
-.custom-radio .custom-control-input:checked ~ .custom-control-indicator {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 .custom-controls-stacked {
@@ -4200,6 +4280,7 @@ tbody.collapse.show {
 /* @goorm: add */
 .nav-lg .nav-link {
   font-size: 1rem;
+  padding: 1.0625rem 0.921875rem;
 }
 
 .nav-tabs {
@@ -4255,8 +4336,8 @@ tbody.collapse.show {
 }
 
 .nav-underline .nav-link {
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  padding-top: 1.285625rem;
+  padding-bottom: 1.285625rem;
   position: relative;
   color: #90929E;
   font-size: 0.875rem;
@@ -4267,7 +4348,8 @@ tbody.collapse.show {
 }
 
 .nav-underline .nav-link.active {
-  color: #609AE9;
+  color: #4F85E3;
+  font-weight: 500;
 }
 
 .nav-underline .nav-link.active:after {
@@ -4918,6 +5000,19 @@ tbody.collapse.show {
 
 .card-band-dark {
   background-color: #313338;
+}
+
+/* @goorm: add class */
+.well .card-body {
+  padding: 1.25rem;
+}
+
+.well.well-sm .card-body {
+  padding: 0.625rem;
+}
+
+.well.well-lg .card-body {
+  padding: 1.5rem;
 }
 
 .card-body {

@@ -18,6 +18,10 @@
 
 // @goorm: ßaccordion
 .accordion {
+  &.side_nav {
+    border: 1px solid $gray-400;
+  }
+  
 	a {
 		text-decoration: none;
     
@@ -28,29 +32,42 @@
     
     -ms-flex-align: center !important;
     align-items: center !important;
+    
+    &:hover {
+      background-color: $dropdown-link-hover-bg;
+      color: #4F85E3;
+    }
 	}
-	.depth1-icon, .depth2-icon {
-		font-size: 16px;
-		margin-right: 12px;
+  
+	.depth-icon {
+		margin-right: 1.25rem;
 	}
+  
+  i {
+    color: $gray-500;
+  }
+  
 	.depth1 {
-		a {
-			display: block;
-			padding: 0 15px;
-			line-height: 42px;
-			font-size: 14px;
+		> a {
+			padding: .625rem 1.125rem;
+      
+			&.on, &:hover {
+        background-color: $dropdown-link-hover-bg;
+        color: #4F85E3;
+      }
 		}
 	}
 	.depth2 {
-		a {
-			padding-left: 43px;
-			line-height: 36px;
-			font-size: 12px;
+		> a {
+			padding: .1875rem 0 .1875rem 3.4375rem;
+			&.on, &:hover {
+				background-color: $dropdown-link-hover-bg;
+				color: #4F85E3;
+			}
 		}	
 	}
   
   .caret {
-    color: $gray-500;
     font-size: 112.5%;
     
     margin-left: auto !important;
@@ -81,16 +98,20 @@
 		a {
 			color: #FFFFFF;
 			background-color: #2B3240;
-			&.on {
+      
+			&.on,
+      		&:hover {
+        		background-color: #353F50;
 				color: #3D81E0;
 			}
 		}
 		.depth1-icon {
 			color: #4B96E6;
 		}
+    
 		.depth2 {
 			a {
-				color: #CED0DA;
+				color: $gray-400;
 				background-color: #222833;
 				&.on, &:hover {
 					color:#3D81E0;
