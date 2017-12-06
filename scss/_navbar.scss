@@ -64,10 +64,30 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
+  /* @goorm: add class */
+  .nav-item {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    
+    .dropdown-menu-goorm {
+      min-width: 9.375rem !important;
+      margin-left: .5rem;
+    }
+  }
 
   .nav-link {
     padding-right: 0;
     padding-left: 0;
+    
+    /* @goorm: add class */
+    &.dropdown-toggle {    
+      img, .default-profile {
+        border-radius: 50% !important;
+      }
+    }
   }
 
   .dropdown-menu {

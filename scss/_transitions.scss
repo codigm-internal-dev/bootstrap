@@ -16,6 +16,91 @@
   }
 }
 
+// @goorm: ßaccordion
+.accordion {
+	a {
+		text-decoration: none;
+    
+    display: -ms-flexbox !important;
+    display: flex !important;
+    
+    color: inherit;
+    
+    -ms-flex-align: center !important;
+    align-items: center !important;
+	}
+	.depth1-icon, .depth2-icon {
+		font-size: 16px;
+		margin-right: 12px;
+	}
+	.depth1 {
+		a {
+			display: block;
+			padding: 0 15px;
+			line-height: 42px;
+			font-size: 14px;
+		}
+	}
+	.depth2 {
+		a {
+			padding-left: 43px;
+			line-height: 36px;
+			font-size: 12px;
+		}	
+	}
+  
+  .caret {
+    color: $gray-500;
+    font-size: 112.5%;
+    
+    margin-left: auto !important;
+  }
+  
+	.down_caret {
+		display: block;
+	}
+  
+	.right_caret,
+  .caret-collapsed {
+		display: none;
+	}
+  
+  .collapsed {
+    .right_caret,
+    .caret-collapsed {
+      display: block;
+    }
+    
+    .down_caret,
+    .caret-opened {
+      display: none;
+    }
+  }
+  
+	&.dark_theme {
+		a {
+			color: #FFFFFF;
+			background-color: #2B3240;
+			&.on {
+				color: #3D81E0;
+			}
+		}
+		.depth1-icon {
+			color: #4B96E6;
+		}
+		.depth2 {
+			a {
+				color: #CED0DA;
+				background-color: #222833;
+				&.on, &:hover {
+					color:#3D81E0;
+					background-color:#353F50;
+				}
+			}
+		}
+	}
+}
+
 tr {
   &.collapse.show {
     display: table-row;

@@ -29,13 +29,13 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: $btn-disabled-opacity;
+    // opacity: $btn-disabled-opacity;	// @goorm: original
     @include box-shadow(none);
   }
 
   &:not([disabled]):not(.disabled):active,
   &:not([disabled]):not(.disabled).active {
-    background-image: none;
+    // background-image: none; // @goorm: original
     @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
   }
 }
@@ -45,6 +45,8 @@ a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
 }
+
+
 
 
 //
@@ -74,8 +76,97 @@ fieldset[disabled] a.btn {
   
   &:hover {
     color: $white;
-    background-color: $primary;
-    border-color: $primary;
+    background-color: rgba(0, 0, 0, 0.3);
+    // border-color: $primary; // @goorm: new
+  }
+}
+
+/* @goorm: add class */
+.btn-dropdown {
+	min-width: 230px;
+  border: 1px solid #CED0DA;
+  border-radius: 4px;
+  background: linear-gradient(0deg, #F3F5F8 0%, #FFFFFF 100%);
+	color: #313338;
+  text-align: left;
+	font-size: 14px;
+  position: relative;
+  padding-right: .8125rem;
+  padding-left: .8125rem;
+  
+  &.disabled,
+  &:disabled {
+    border: 1px solid #CED0DA;
+    background: #F5F5F5;
+    color: #CED0DA;
+    opacity: 1;
+  }
+  
+  &.btn::after {
+    right:15px;
+    top: 45%;
+    position: absolute;
+  }
+  
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    outline: 0;
+    background: linear-gradient(0deg, #F0F2F5 0%, #F5F7FA 100%);
+    box-shadow: none;
+    border: 1px solid #609AE9;
+  }
+  
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid #609AE9;
+  }
+  
+  /* @goorm: add class */
+  &.btn-sm {
+    padding: .21875rem .8125rem;
+  }
+  
+  /* @goorm: add class */
+  &.btn-lg {
+    padding-left: .8125rem;
+    padding-right: .8125rem;
+  }
+  
+  /* @goorm : add class */
+	.caret {
+    color: $gray-500;
+    margin-left: auto;
+  }
+}
+
+/* @goorm: add class */
+.btn-dropdown-dark {
+  border: 1px solid #5F6675;
+  background : #292D39;
+	color: #FFFFFF;
+  
+  &.disabled,
+  &:disabled {
+    background: #3B4250;
+    color: #CED0DA;
+    opacity: 0.4;
+  }
+  
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    background: #3B4250;
+    border: 1px solid #609AE9;
+  }
+  
+  .btn-dropdown-icon {
+    color: #18BBB8;
+	font-size: 16px;
+	margin-right: 8px;
+  }
+  .btn-dropdown-org {
+    opacity: 0.4;
   }
 }
 
@@ -147,6 +238,23 @@ fieldset[disabled] a.btn {
   }
 }
 
+/* @goorm: add class */
+.btn-block-goorm {
+  min-width: 6.25rem;
+  
+  &.btn-xs {
+    min-width: 4.25rem;
+  }
+  
+  &.btn-sm {
+    min-width: 5.375rem;
+  }
+  
+  &.btn-lg {
+    min-width: 8.125rem;
+  }
+}
+
 // Specificity overrides
 input[type="submit"],
 input[type="reset"],
@@ -154,4 +262,64 @@ input[type="button"] {
   &.btn-block {
     width: 100%;
   }
+}
+
+/* @goorm: add class */
+.btn-switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 auto;
+  width: 1.875rem;
+  height: 1rem;
+}
+
+/* @goorm: add class */
+.btn-switch input {
+  display: none;
+}
+
+/* @goorm: add class */
+.btn-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* @goorm: add class */
+.btn-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: .75rem;
+  width: .75rem;
+  left: .125rem;
+  top: .125rem;
+  background-color: $white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+/* @goorm: add class */
+.btn-switch-slider.round {
+  border-radius: 5.1875rem;
+}
+
+/* @goorm: add class */
+.btn-switch-slider.round:before {
+  border-radius: $custom-radio-indicator-border-radius;
+}
+
+/* @goorm: add class */
+input:checked + .btn-switch-slider {
+  background-color: #29B312;
+}
+
+/* @goorm: add class */
+input:checked + .btn-switch-slider:before {
+  left: 1rem;
 }

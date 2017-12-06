@@ -159,8 +159,10 @@ select.form-control {
 // issue documented in https://github.com/twbs/bootstrap/issues/15074.
 
 .form-control-sm {
-  padding: $input-padding-y-sm $input-padding-x-sm;
-  font-size: $font-size-sm;
+  // padding: $input-padding-y-sm $input-padding-x-sm;	// @goorm: original
+  padding: $input-padding-y-sm $input-padding-x;	// @goorm: new
+  // font-size: $font-size-sm;	// @goorm: original
+  font-size: $font-size-base;	// @goorm: new
   line-height: $input-line-height-sm;
   @include border-radius($input-border-radius-sm);
 }
@@ -172,7 +174,8 @@ select.form-control-sm {
 }
 
 .form-control-lg {
-  padding: $input-padding-y-lg $input-padding-x-lg;
+  // padding: $input-padding-y-lg $input-padding-x-lg;	// @goorm: original
+  padding: $input-padding-y-lg $input-padding-x;	// @goorm: new
   font-size: $font-size-lg;
   line-height: $input-line-height-lg;
   @include border-radius($input-border-radius-lg);
@@ -197,6 +200,18 @@ select.form-control-lg {
 .form-text {
   display: block;
   margin-top: $form-text-margin-top;
+  
+  color: $gray-500;	// @goorm: add
+  
+  -ms-flex-align: center !important;	// @goorm: add
+  align-items: center !important;	// @goorm: add
+  display: -ms-flexbox !important;	// @goorm: add
+  display: flex !important;	// @goorm: add
+  
+  /* @goorm: add class */
+  .gi {
+    margin-right: .3125rem;
+  }
 }
 
 

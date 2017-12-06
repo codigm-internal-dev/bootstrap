@@ -69,6 +69,7 @@ $yellow:  #FBD426 !default; // @goorm: new
 $green:   #18BB5F !default; // @goorm: new
 $teal:    #4DDFB0 !default; // @goorm: new
 $cyan:    #18BBB8 !default; // @goorm: new
+$deep-cyan:    #2A9CD3 !default; // @goorm: new
 
 $colors: () !default;
 $colors: map-merge((
@@ -90,6 +91,7 @@ $colors: map-merge((
   "green":      $green,
   "teal":       $teal,
   "cyan":       $cyan,
+  "deep-cyan":	$deep-cyan, // @goorm: new
   "white":      $white,
   "gray":       $gray-600,
   "gray-dark":  $gray-800
@@ -109,6 +111,7 @@ $colors: map-merge((
 $primary:       $blue-300 !default;
 $secondary:     $blue-400 !default;
 $thirdary:      $blue-500 !default;
+$tc:			$deep-cyan !default;
 $success:       $cyan !default;
 $info:          $blue-300 !default;
 $warning:       $orange !default;
@@ -121,6 +124,7 @@ $theme-colors: map-merge((
   "primary":    $primary,
   "secondary":  $secondary,
   "thirdary":   $thirdary, // @goorm: new
+  "tc":			$tc, // @goorm: new
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
@@ -143,7 +147,8 @@ $yiq-text-light: $white !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:              true !default;
+// $enable-caret:              true !default;	// @goorm: original
+$enable-caret:              false !default;	// @goorm: new
 $enable-rounded:            true !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
@@ -256,6 +261,7 @@ $border-color:                $gray-500 !default; // @goorm: new
 // $border-radius:               .25rem !default;// @goorm: original
 $border-radius:               3px !default;// @goorm: new
 $border-radius-lg:            .3rem !default;
+$border-radius-md:            .25rem !default;	// @goorm: add
 $border-radius-sm:            .2rem !default;
 
 $component-active-color:      $white !default;
@@ -368,13 +374,19 @@ $hr-margin-y:                 $spacer !default;
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 // $table-cell-padding:          .75rem !default; // @goorm: original
-$table-cell-padding-y:        .875rem !default; // @goorm: add
-$table-cell-padding-x:        1.875rem !default; // @goorm: add
-$table-cell-padding-sm:       .3rem !default;
+$table-cell-padding-y:        .90625rem !default; // @goorm: add
+$table-cell-padding-x:        1.25rem !default; // @goorm: add
+// $table-cell-padding-sm:       .3rem !default;	// @goorm: original
+$table-cell-padding-sm-y:       .625rem !default; // @goorm: add
+$table-cell-padding-sm-x:       1.25rem !default; // @goorm: add
+$table-cell-padding-lg-y:       1.53125rem !default; // @goorm: add
+$table-cell-padding-lg-x:       1.25rem !default; // @goorm: add
 
 $table-bg:                    transparent !default;
-$table-accent-bg:             rgba($black, .05) !default;
-$table-hover-bg:              rgba($black, .075) !default;
+// $table-accent-bg:             rgba($black, .05) !default;	// @goorm: original
+$table-accent-bg:             #FAFAFA !default;	// @goorm: new
+// $table-hover-bg:              rgba($black, .075) !default;	// @goorm: original
+$table-hover-bg:              #F1F3F6 !default;	// @goorm: new
 $table-active-bg:             $table-hover-bg !default;
 
 $table-border-width:          $border-width !default;
@@ -399,18 +411,20 @@ $table-dark-color:            $body-bg !default;
 
 // $input-btn-padding-y:         .375rem !default;// @goorm: original
 $input-btn-padding-y:         .34375rem !default;// @goorm: new
-$input-btn-padding-x:         .75rem !default;
+// $input-btn-padding-x:         .75rem !default;// @goorm: original
+$input-btn-padding-x:         .75rem !default;// @goorm: new
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
 $input-btn-focus-color:       rgba(theme-color("primary"), .25) !default;
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
-$input-btn-padding-y-xs:    .125rem !default; // @goorm: add
+$input-btn-padding-y-xs:    .0625rem !default; // @goorm: add
 $input-btn-padding-x-xs:    .3125rem !default; // @goorm: add
 $input-btn-line-height-xs:  $line-height-base !default; // @goorm: add
 
-$input-btn-padding-y-sm:      .25rem !default;
+// $input-btn-padding-y-sm:      .25rem !default;	// @goorm: original
+$input-btn-padding-y-sm:      .15625rem !default;	// @goorm: new
 // $input-btn-padding-x-sm:      .5rem !default; // @goorm: original
 $input-btn-padding-x-sm:      .625rem !default; // @goorm: new
 // $input-btn-line-height-sm:    $line-height-sm !default; // @goorm: original
@@ -439,7 +453,8 @@ $btn-padding-y-xs:            $input-btn-padding-y-xs !default;
 $btn-padding-x-xs:            $input-btn-padding-x-xs !default;
 $btn-line-height-xs:          $input-btn-line-height-xs !default;
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+// $btn-padding-y-sm:            $input-btn-padding-y-sm !default;	// @goorm: original
+$btn-padding-y-sm:            .3125rem !default;	// @goorm: new
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
 $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
@@ -518,7 +533,8 @@ $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$inpu
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$form-text-margin-top:                  .25rem !default;
+// $form-text-margin-top:                  .25rem !default;	// @goorm: original
+$form-text-margin-top:                  .3125rem !default;	// @goorm: new
 
 $form-check-margin-bottom:              .5rem !default;
 $form-check-input-gutter:               1.25rem !default;
@@ -556,7 +572,8 @@ $custom-control-indicator-active-color:         $white !default;
 $custom-control-indicator-active-bg:            lighten(theme-color("primary"), 35%) !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 
-$custom-checkbox-indicator-border-radius:       $border-radius !default;
+// $custom-checkbox-indicator-border-radius:       $border-radius !default;	// @goorm: original
+$custom-checkbox-indicator-border-radius:       $border-radius-md !default;	// @goorm: new
 $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 $custom-checkbox-indicator-indeterminate-bg:    theme-color("primary") !default;
@@ -760,11 +777,15 @@ $jumbotron-bg:                      $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:                     .75rem !default;
-$card-spacer-x:                     1.25rem !default;
+// $card-spacer-y:                     .75rem !default;	// @goorm: original
+$card-spacer-y:                     .625rem !default;	// @goorm: new
+// $card-spacer-x:                     1.25rem !default;	// @goorm: original
+$card-spacer-x:                     .8125rem !default;	// @goorm: new
 $card-border-width:                 $border-width !default;
-$card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .125) !default;
+// $card-border-radius:                $border-radius !default;	// @goorm: original
+$card-border-radius:                $border-radius-md !default;	// @goorm: new
+// $card-border-color:                 rgba($black, .125) !default;	// @goorm: original
+$card-border-color:                 $gray-400 !default;	// @goorm: new
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                       rgba($black, .03) !default;
 $card-bg:                           $white !default;
@@ -844,7 +865,8 @@ $badge-pill-border-radius:          10rem !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:         1rem !default;
+// $modal-inner-padding:         1rem !default;	// @goorm: original
+$modal-inner-padding:         .9375rem !default;	// @goorm: new
 
 $modal-dialog-margin:         .5rem !default;
 $modal-dialog-margin-y-sm-up: 1.75rem !default;
@@ -853,17 +875,22 @@ $modal-title-line-height:           $line-height-base !default;
 
 $modal-content-bg:               $white !default;
 $modal-content-border-color:     rgba($black, .2) !default;
+$modal-content-border-top-color:     $blue-100 !default; // @goorm: new
 $modal-content-border-width:     $border-width !default;
+$modal-content-border-top-width:     .25rem !default; // @goorm: new
 $modal-content-box-shadow-xs:    0 .25rem .5rem rgba($black, .5) !default;
 $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5) !default;
 
 $modal-backdrop-bg:           $black !default;
 $modal-backdrop-opacity:      .5 !default;
-$modal-header-border-color:   $gray-200 !default;
+// $modal-header-border-color:   $gray-200 !default; // @goorm: original
+$modal-header-border-color:   #DFE3E9 !default; // @goorm: new
 $modal-footer-border-color:   $modal-header-border-color !default;
 $modal-header-border-width:   $modal-content-border-width !default;
 $modal-footer-border-width:   $modal-header-border-width !default;
 $modal-header-padding:        1rem !default;
+$modal-header-padding-y:        1.125rem !default;	// @goorm: add
+$modal-header-padding-x:        .9375rem !default;	// @goorm: add
 
 $modal-lg:                          800px !default;
 $modal-md:                          500px !default;
@@ -983,7 +1010,7 @@ $carousel-transition:               transform .6s ease !default;
 // $close-font-weight:                 $font-weight-bold !default; // @goorm: original
 $close-font-weight:                 600 !default; // @goorm: new
 // $close-color:                       $black !default; // @goorm: original
-$close-color:                       $white !default; // @goorm: new
+$close-color:                       $gray-500 !default; // @goorm: new
 // $close-text-shadow:                 0 1px 0 $white !default; // @goorm: original (not using)
 
 // Code

@@ -7,6 +7,86 @@
 .dropdown-toggle {
   // Generate the caret automatically
   @include caret;
+  
+  display: -ms-flexbox !important;	// @goorm: add
+  display: flex !important;	// @goorm: add
+  -ms-flex-align: center !important;	// @goorm: add
+  align-items: center !important;	// @goorm: add
+}
+
+/* @goorm : add class */
+.dropdown-toggle i {
+  font-size: 1rem;
+}
+
+/* @goorm : add class */
+.dropdown-toggle:not(.nav-link) .caret {
+  top: 0;
+}
+
+/* @goorm : add class */
+.dropdown-toggle:not(.btn-dropdown) .caret {
+  margin-left: .1875rem;
+}
+
+/* @goorm : add class */
+.dropdown-menu-goorm {
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.15) !important;
+  padding: 0.1rem 0 !important;
+  min-width: 230px !important;
+  border-radius: 4px !important;
+  margin-top: 0.25rem !important;
+  
+  &:not(.dropdown-menu-dark) {
+    border-color: $gray-400 !important;
+  }
+  
+  .dropdown-divider {
+    margin: 0.1rem 0;
+  	border-top: 1px solid #CED0DA;
+  }
+  .dropdown-item {
+    width: 100%;
+    padding: 0.35rem 13px;
+    color: #313338;
+    text-align: left;
+    white-space: nowrap;
+    border: 0;
+    
+    display: -ms-flexbox !important;
+    display: flex !important;
+
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover,
+    &.active,
+    &:active {
+      color: #4F85E3;
+      background-color: #F1F3F6;
+      text-decoration: none;
+    }
+
+    &.disabled,
+    &:disabled {
+      color: #6B727F;
+      background-color: transparent;
+      background-image: none;
+    }
+    
+    i {
+      top: 0;
+      margin-left: auto !important;
+      -ms-flex-item-align: center !important;
+      align-self: center !important;
+    }
+  }
+  .dropdown-header {
+    cursor: default;
+    color: #90929E;
+    padding: 0.35rem 13px;
+    font-weight: 400;
+  }
 }
 
 // The dropdown menu
@@ -29,6 +109,24 @@
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+}
+
+/* @goorm: add class */
+.dropdown-menu-dark {
+  border: 1px solid #5F6675;
+  background: #292D39;
+  color: $white;
+  
+  .dropdown-item {
+    color: $white;
+    
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      background-color: #353F50;
+    }
+  }
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
