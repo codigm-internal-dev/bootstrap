@@ -2010,8 +2010,8 @@ pre code {
   opacity: 1;
 }
 
-.form-control:not([readonly]):not([disabled]):hover {
-  border-color: #90929E;
+.form-control:not([readonly]):not([disabled]):not(.is-invalid):not(.is-valid):hover {
+  border-color: #609AE9;
 }
 
 select.form-control:not([size]):not([multiple]) {
