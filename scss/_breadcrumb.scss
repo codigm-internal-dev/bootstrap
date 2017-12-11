@@ -64,7 +64,7 @@
   /* @goorm: add class */
   &:not(.active) {
   	.step {
-    	border: 1px solid $gray-400;
+    	border: $border-width solid $gray-400;
       line-height: 1.5625rem;
     }
   }
@@ -88,7 +88,7 @@
   
   /* @goorm: add class */
   i {
-    color: $gray-500;
+    color: $light;
     padding: 0 .4728125rem;
   }
 }
@@ -96,10 +96,10 @@
 // @goorm: add
 a.breadcrumb-item,
 .breadcrumb-item > a {
-  color: $gray-500;
+  color: $light;
   
   &:hover {
-    color: darken($gray-500, 15%);
+    color: darken($light, 15%);
     text-decoration: none;
   }
 }

@@ -3,13 +3,69 @@
   to { background-position: 0 0; }
 }
 
+/* @goorm: add class */
+.progress-label {
+  width: 100%;
+  
+  span {
+    float: right;
+  }
+}
+
 .progress {
   display: flex;
   height: $progress-height;
-  overflow: hidden; // force rounded corners by cropping it
+  // overflow: hidden; // force rounded corners by cropping it	// @goorm: original
   font-size: $progress-font-size;
   background-color: $progress-bg;
   @include border-radius($progress-border-radius);
+  
+  -ms-flex-align: end;	// @goorm: add
+  align-items: flex-end;	// @goorm: add
+  
+  /* @goorm: add class */
+  &.progress-lg {
+    height: .25rem;
+    @include border-radius(6.25rem);
+    
+    .progress-bar {
+      height: .35375rem;
+    }
+  }
+  
+  /* @goorm: add class */
+  &.progress-steps {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    margin-top: .3125rem;
+    
+    .progress-bar {
+      margin-left: -1.0625rem;
+      
+      &:first-of-type {
+        margin-left: -.9375rem;
+      }
+      
+      &:not(.progress-completed) {
+        visibility: hidden;
+      }
+    }
+    
+    .progress-step {
+      height: 1rem;
+      width: 1rem;
+      @include border-radius(50%);
+      box-shadow: 0 .0625rem .125rem 0 rgba(0,0,0,0.05);
+      background-color: $progress-bg;
+      z-index: 0;
+    }
+    
+    .progress-step:first-child,
+    .progress-completed + .progress-step {
+      border: $border-width solid $gray-400;
+      @include gradient-directional(#F2F4F8 0%, $white 100%, 0deg);
+    }
+  }
 }
 
 .progress-bar {
@@ -20,6 +76,17 @@
   text-align: center;
   background-color: $progress-bar-bg;
   @include transition($progress-bar-transition);
+  
+  height: .235rem;	// @goorm: add
+  bottom: 0;	// @goorm: add
+  
+  &:first-child {
+    @include border-left-radius($border-radius);	// @goorm: add
+  }
+  
+  &:last-child {
+    @include border-right-radius($border-radius);	// @goorm: add
+  }
 }
 
 .progress-bar-striped {

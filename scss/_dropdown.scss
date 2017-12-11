@@ -16,7 +16,7 @@
 
 /* @goorm : add class */
 .dropdown-toggle i {
-  font-size: 1rem;
+  font-size: $h6-font-size;
 }
 
 /* @goorm : add class */
@@ -43,7 +43,7 @@
   
   .dropdown-divider {
     margin: 0.1rem 0;
-  	border-top: 1px solid #CED0DA;
+  	border-top: $border-width solid $gray-400;
   }
   .dropdown-item {
     width: 100%;
@@ -113,13 +113,15 @@
 
 /* @goorm: add class */
 .dropdown-menu-dark {
-  border: 1px solid #5F6675;
+  border: $border-width solid #5F6675;
   background: #292D39;
   color: $white;
   
   .dropdown-item {
     color: $white;
     
+    &:active,
+    &.active,
     &:focus,
     &.focus,
     &:hover,

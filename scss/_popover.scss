@@ -8,14 +8,16 @@
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
   @include reset-text();
-  font-size: $font-size-sm;
+  // font-size: $font-size-sm;	// @goorm: original
   // Allow breaking very long words so they don't overflow the popover's bounds
   word-wrap: break-word;
   background-color: $popover-bg;
   background-clip: padding-box;
   border: $popover-border-width solid $popover-border-color;
-  @include border-radius($border-radius-lg);
-  @include box-shadow($popover-box-shadow);
+  // @include border-radius($border-radius-lg);	// @goorm: original
+  @include border-radius($border-radius);	// @goorm: new
+  // @include box-shadow($popover-box-shadow);	// @goorm: original
+  box-shadow: $popover-box-shadow;	// @goorm: new
 
   // Arrows
   //
@@ -101,6 +103,7 @@
 
     .arrow {
       top: 0;
+      margin-left: .1875rem;	// @goorm: add
     }
 
     .arrow::before,
@@ -179,7 +182,8 @@
   font-size: $font-size-base;
   color: $popover-header-color;
   background-color: $popover-header-bg;
-  border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);
+  // border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);	// @goorm: original
+  border-bottom: $popover-border-width solid $popover-border-color;	// @goorm: new
   $offset-border-width: calc(#{$border-radius-lg} - #{$popover-border-width});
   @include border-top-radius($offset-border-width);
 
@@ -191,4 +195,37 @@
 .popover-body {
   padding: $popover-body-padding-y $popover-body-padding-x;
   color: $popover-body-color;
+  max-height: 152.5px;	// @goorm: add
+  overflow: auto;	// @goorm: add
+  
+  /* @goorm: add class */
+  .list-group {
+    margin: ($popover-body-padding-y * -1) ($popover-body-padding-x * -1);
+    
+    .list-group-item {
+      border-left: 0;
+      border-right: 0;
+      color: inherit;
+      padding: .375rem .8125rem;
+      
+      &:first-child {
+        border-top: 0;
+        border-radius: unset !important;
+      }
+      
+      &:last-child {
+        border-bottom: 0;
+      }
+      
+      .lecture-name {
+        font-size: $font-size-sm;
+        color: $list-group-action-color;
+        
+        .notified-date {
+          color: $light;
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
 }

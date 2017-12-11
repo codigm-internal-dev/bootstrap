@@ -256,7 +256,7 @@ $line-height-sm:              1.7 !default; // @goorm: new
 
 $border-width:                1px !default;
 // $border-color:                $gray-200 !default; // @goorm: original
-$border-color:                $gray-500 !default; // @goorm: new
+$border-color:                $light !default; // @goorm: new
 
 // $border-radius:               .25rem !default;// @goorm: original
 $border-radius:               3px !default;// @goorm: new
@@ -348,7 +348,7 @@ $small-font-size:             80% !default;
 $text-muted:                  $gray-400 !default; // @goorm: new
 
 // $blockquote-small-color:      $gray-600 !default; // @goorm: original
-$blockquote-small-color:      $gray-500 !default; // @goorm: new
+$blockquote-small-color:      $light !default; // @goorm: new
 $blockquote-font-size:        ($font-size-base * 1.25) !default;
 
 // $hr-border-color:             rgba($black, .1) !default; // @goorm: original
@@ -397,11 +397,11 @@ $table-head-bg:               $gray-200 !default;
 $table-head-color:            $gray-700 !default;
 
 // $table-dark-bg:               $gray-900 !default; // @goorm: original
-$table-dark-bg:               $gray-500 !default; // @goorm: new
+$table-dark-bg:               $light !default; // @goorm: new
 $table-dark-accent-bg:        rgba($white, .05) !default;
 $table-dark-hover-bg:         rgba($white, .075) !default;
 // $table-dark-border-color:     lighten($gray-900, 7.5%) !default; // @goorm: original
-$table-dark-border-color:     lighten($gray-500, 7.5%) !default; // @goorm: new
+$table-dark-border-color:     lighten($light, 7.5%) !default; // @goorm: new
 $table-dark-color:            $body-bg !default;
 
 
@@ -454,7 +454,7 @@ $btn-padding-x-xs:            $input-btn-padding-x-xs !default;
 $btn-line-height-xs:          $input-btn-line-height-xs !default;
 
 // $btn-padding-y-sm:            $input-btn-padding-y-sm !default;	// @goorm: original
-$btn-padding-y-sm:            .3125rem !default;	// @goorm: new
+$btn-padding-y-sm:            .25rem !default;	// @goorm: new
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
 $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
@@ -518,7 +518,7 @@ $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
 // $input-placeholder-color:               $gray-600 !default;// @goorm: original
-$input-placeholder-color:               $gray-500 !default;// @goorm: new
+$input-placeholder-color:               $light !default;// @goorm: new
 
 $input-height-border:                   $input-btn-border-width * 2 !default;
 
@@ -651,9 +651,9 @@ $dropdown-border-width:             $border-width !default;
 $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 // $dropdown-link-color:               $gray-900 !default; // @goorm: original
-$dropdown-link-color:               $gray-500 !default; // @goorm: new
+$dropdown-link-color:               $light !default; // @goorm: new
 // $dropdown-link-hover-color:         darken($gray-900, 5%) !default; // @goorm: original
-$dropdown-link-hover-color:         darken($gray-500, 5%) !default; // @goorm: new
+$dropdown-link-hover-color:         darken($light, 5%) !default; // @goorm: new
 $dropdown-link-hover-bg:            $gray-100 !default;
 
 $dropdown-link-active-color:        $component-active-color !default;
@@ -708,7 +708,7 @@ $nav-pills-link-active-bg:          $component-active-bg !default;
 $nav-underline-link-padding-y:           1.285625rem !default;	// 20.57px
 $nav-underline-border-color:             #DFE2E5 !default;
 $nav-underline-border-width:             1px !default;
-$nav-underline-link-color:               $gray-500 !default;
+$nav-underline-link-color:               $light !default;
 $nav-underline-link-active-color:        #4F85E3 !default;
 $nav-underline-link-active-border-color: $primary !default;
 $nav-underline-link-active-border-width: 3px !default;
@@ -759,7 +759,7 @@ $pagination-padding-x-lg:           1.5rem !default;
 $pagination-line-height:            1.25 !default;
 
 // $pagination-color:                  $link-color !default;	// @goorm: original
-$pagination-color:                  $gray-500 !default;	// @goorm: new
+$pagination-color:                  $light !default;	// @goorm: new
 $pagination-bg:                     $white !default;
 $pagination-border-width:           $border-width !default;
 // $pagination-border-color:           $gray-300 !default;	// @goorm: original
@@ -831,12 +831,16 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 // Popovers
 
 $popover-bg:                        $white !default;
-$popover-max-width:                 276px !default;
+// $popover-max-width:                 276px !default;	// @goorm: original
+$popover-max-width:                 300px !default;	// @goorm: new
 $popover-border-width:              $border-width !default;
-$popover-border-color:              rgba($black, .2) !default;
-$popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
+// $popover-border-color:              rgba($black, .2) !default;	// @goorm: original
+$popover-border-color:              $gray-400 !default;	// @goorm: new
+// $popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;	// @goorm: original
+$popover-box-shadow:                0 .0625rem .375rem 0 rgba(0,0,0,0.15) !default;	// @goorm: new
 
-$popover-header-bg:                 darken($popover-bg, 3%) !default;
+// $popover-header-bg:                 darken($popover-bg, 3%) !default;	// @goorm: original
+$popover-header-bg:                 $white !default;	// @goorm: new
 $popover-header-color:              $headings-color !default;
 $popover-header-padding-y:          .5rem !default;
 $popover-header-padding-x:          .75rem !default;
@@ -845,8 +849,10 @@ $popover-body-color:                $body-color !default;
 $popover-body-padding-y:            $popover-header-padding-y !default;
 $popover-body-padding-x:            $popover-header-padding-x !default;
 
-$popover-arrow-width:               .8rem !default;
-$popover-arrow-height:              .4rem !default;
+// $popover-arrow-width:               .8rem !default;	// @goorm: original
+$popover-arrow-width:               .4rem !default;	// @goorm: new
+// $popover-arrow-height:              .4rem !default;	// @goorm: original
+$popover-arrow-height:              .2rem !default;	// @goorm: new
 $popover-arrow-color:               $popover-bg !default;
 
 $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
@@ -923,10 +929,13 @@ $alert-border-width:                $border-width !default;
 
 // Progress bars
 
-$progress-height:                   1rem !default;
+// $progress-height:                   1rem !default;	// @goorm: original
+$progress-height:                   .125rem !default;	// @goorm: new
 $progress-font-size:                ($font-size-base * .75) !default;
-$progress-bg:                       $gray-200 !default;
-$progress-border-radius:            $border-radius !default;
+// $progress-bg:                       $gray-200 !default;	// @goorm: original
+$progress-bg:                       #E2E7EE !default;	// @goorm: new
+// $progress-border-radius:            $border-radius !default;	// @goorm: original
+$progress-border-radius:            .625rem !default;	// @goorm: new
 $progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1) !default;
 $progress-bar-color:                $white !default;
 $progress-bar-bg:                   theme-color("primary") !default;
@@ -1021,7 +1030,7 @@ $carousel-transition:               transform .6s ease !default;
 // $close-font-weight:                 $font-weight-bold !default; // @goorm: original
 $close-font-weight:                 600 !default; // @goorm: new
 // $close-color:                       $black !default; // @goorm: original
-$close-color:                       $gray-500 !default; // @goorm: new
+$close-color:                       $light !default; // @goorm: new
 // $close-text-shadow:                 0 1px 0 $white !default; // @goorm: original (not using)
 
 // Code
@@ -1034,8 +1043,8 @@ $code-bg:                           $gray-100 !default;
 
 $kbd-color:                         $white !default;
 // $kbd-bg:                            $gray-900 !default; // @goorm: original
-$kbd-bg:                            $gray-500 !default; // @goorm: new
+$kbd-bg:                            $light !default; // @goorm: new
 
 // $pre-color:                         $gray-900 !default; // @goorm: original
-$pre-color:                         $gray-500 !default; // @goorm: new
+$pre-color:                         $light !default; // @goorm: new
 $pre-scrollable-max-height:         340px !default;

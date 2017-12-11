@@ -81,9 +81,27 @@ fieldset[disabled] a.btn {
 }
 
 /* @goorm: add class */
+.btn.btn-notification {
+  background-color: $gray-700;
+  color: $gray-200;
+  border-radius: 50%;
+  position: relative;
+	padding: .5625rem;
+  
+  .badge {
+    position: absolute;
+    padding: 0 .375rem;
+    font-size: $font-size-base;
+    border-radius: .625rem;
+    line-height: 1.25rem;
+    background-color: #F35065;
+  }
+}
+
+/* @goorm: add class */
 .btn-dropdown {
 	min-width: 230px;
-  border: 1px solid #CED0DA;
+  border: $border-width solid $gray-400;
   border-radius: 4px;
   background: linear-gradient(0deg, #F3F5F8 0%, #FFFFFF 100%);
 	color: #313338;
@@ -95,7 +113,7 @@ fieldset[disabled] a.btn {
   
   &.disabled,
   &:disabled {
-    border: 1px solid #CED0DA;
+    border: $border-width solid $gray-400;
     background: #F5F5F5;
     color: #CED0DA;
     opacity: 1;
@@ -112,7 +130,7 @@ fieldset[disabled] a.btn {
     outline: 0;
     background: linear-gradient(0deg, #F0F2F5 0%, #F5F7FA 100%);
     box-shadow: none;
-    border: 1px solid #609AE9;
+    border: $border-width solid $primary;
   }
   
   &:focus,
@@ -120,30 +138,27 @@ fieldset[disabled] a.btn {
   &:not(.disabled):hover {
     outline: 0;
     box-shadow: none;
-    border: 1px solid #609AE9;
+    border: $border-width solid $primary;
   }
   
-  /* @goorm: add class */
   &.btn-sm {
     padding: .21875rem .8125rem;
   }
   
-  /* @goorm: add class */
   &.btn-lg {
     padding-left: .8125rem;
     padding-right: .8125rem;
   }
   
-  /* @goorm : add class */
 	.caret {
-    color: $gray-500;
+    color: $light;
     margin-left: auto;
   }
 }
 
 /* @goorm: add class */
 .btn-dropdown-dark {
-  border: 1px solid #5F6675;
+  border: $border-width solid #5F6675;
   background : #292D39;
 	color: #FFFFFF;
   
@@ -157,7 +172,7 @@ fieldset[disabled] a.btn {
   &:not([disabled]):not(.disabled):active,
   &:not([disabled]):not(.disabled).active {
     background: #3B4250;
-    border: 1px solid #609AE9;
+    border: $border-width solid $primary;
   }
   
   .btn-dropdown-icon {

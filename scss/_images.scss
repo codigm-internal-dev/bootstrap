@@ -23,19 +23,52 @@
 }
 
 /* @goorm: add class */
-.default-profile {
-  height: 2.25rem;
-  width: 2.25rem;
-  background-color: $gray-700;
-  color: $gray-200;
-  
+.user-profile {
   display: -ms-flexbox !important;
   display: flex !important;
-  -ms-flex-pack: center !important;
-  justify-content: center !important;
-  margin-right: 0.5rem !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+  
+  img, .default-profile {
+    border-radius: 50%;
+  }
+  
+  .default-profile {
+    height: 2.25rem;
+    width: 2.25rem;
+    background-color: $gray-700;
+    color: $gray-200;
+
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    margin-right: 0.5rem !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    
+    &.profile-lg {
+      height: $display4-size;
+    	width: $display4-size;
+      
+      i {
+        font-size: $h4-font-size;
+      }
+    }
+    
+    &.profile-huge {
+      height: $display3-size;
+    	width: $display3-size;
+      
+      i {
+        font-size: $h2-font-size;
+      }
+    }
+  }
+  
+  .user-email {
+    color: $gray-700;
+  }
 }
 
 //

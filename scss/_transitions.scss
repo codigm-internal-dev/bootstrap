@@ -19,7 +19,7 @@
 // @goorm: ßaccordion
 .accordion {
   &.side_nav {
-    border: 1px solid $gray-400;
+    border: $border-width solid $gray-400;
     
     a:hover {
       background-color: $dropdown-link-hover-bg;
@@ -50,7 +50,7 @@
   }
   
   i {
-    color: $gray-500;
+    color: $light;
   }
   
 	.depth1 {
