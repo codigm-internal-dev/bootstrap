@@ -412,7 +412,7 @@ $table-dark-color:            $body-bg !default;
 // $input-btn-padding-y:         .375rem !default;// @goorm: original
 $input-btn-padding-y:         .34375rem !default;// @goorm: new
 // $input-btn-padding-x:         .75rem !default;// @goorm: original
-$input-btn-padding-x:         .75rem !default;// @goorm: new
+$input-btn-padding-x:         .8125rem !default;// @goorm: new
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
@@ -870,18 +870,18 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default
 // Badges
 
 // $badge-font-size:                   75% !default; // @goorm: original
-$badge-font-size:                   .625rem !default; // @goorm: new
+$badge-font-size:                   $font-size-sm !default; // @goorm: new
 $badge-font-size-lg:                .875rem !default; // @goorm: add
 // $badge-font-weight:                 $font-weight-bold !default; // @goorm: original
 $badge-font-weight:                 $font-weight-normal !default; // @goorm: new
 // $badge-padding-y:                   .25em !default; // @goorm: original
-$badge-padding-y:                   .1875rem !default; // @goorm: new
+$badge-padding-y:                   .125rem !default; // @goorm: new
 // $badge-padding-x:                   .4em !default; // @goorm: original
 $badge-padding-x:                   .75em !default; // @goorm: new
 $badge-border-radius:               $border-radius !default;
 
 // $badge-pill-padding-x:              .6em !default; // @goorm: original
-$badge-pill-padding-x:              .75em !default; // @goorm: new
+$badge-pill-padding-x:              .625rem !default; // @goorm: new
 // Use a higher than normal value to ensure completely rounded edges when
 // customizing padding or font-size on labels.
 $badge-pill-border-radius:          10rem !default;

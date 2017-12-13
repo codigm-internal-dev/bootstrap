@@ -1994,7 +1994,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.34375rem 0.75rem;
+  padding: 0.34375rem 0.8125rem;
   font-size: 0.875rem;
   line-height: 1.7;
   color: #313338;
@@ -2113,7 +2113,7 @@ select.form-control:focus::-ms-value {
 .form-control-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  padding: 0.15625rem 0.75rem;
+  padding: 0.15625rem 0.8125rem;
   font-size: 0.875rem;
   line-height: 1.7;
   border-radius: 0.2rem;
@@ -2128,7 +2128,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  padding: 0.53125rem 0.75rem;
+  padding: 0.53125rem 0.8125rem;
   font-size: 1rem;
   line-height: 1.7;
   border-radius: 0.3rem;
@@ -2467,7 +2467,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.34375rem 0.75rem;
+  padding: 0.34375rem 0.8125rem;
   font-size: 0.875rem;
   line-height: 1.7;
   border-radius: 3px;
@@ -3572,7 +3572,7 @@ tbody.collapse.show {
 /* @goorm : add class */
 .dropdown-menu-goorm {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15) !important;
-  padding: 0.1rem 0 !important;
+  padding: 0.25rem 0 !important;
   min-width: 230px !important;
   border-radius: 4px !important;
   margin-top: 0.25rem !important;
@@ -3823,8 +3823,8 @@ tbody.collapse.show {
 }
 
 .dropdown-toggle-split {
-  padding-right: 0.5625rem;
-  padding-left: 0.5625rem;
+  padding-right: 0.609375rem;
+  padding-left: 0.609375rem;
 }
 
 .dropdown-toggle-split::after {
@@ -3979,7 +3979,7 @@ tbody.collapse.show {
 }
 
 .input-group-addon {
-  padding: 0.34375rem 0.75rem;
+  padding: 0.34375rem 0.8125rem;
   margin-bottom: 0;
   font-size: 0.875rem;
   font-weight: 400;
@@ -4282,7 +4282,7 @@ tbody.collapse.show {
   right: 0;
   left: 0;
   height: calc(2.175rem + 2px);
-  padding: 0.34375rem 0.75rem;
+  padding: 0.34375rem 0.8125rem;
   line-height: 1.7;
   color: #313338;
   pointer-events: none;
@@ -4307,7 +4307,7 @@ tbody.collapse.show {
   z-index: 1;
   display: block;
   height: calc(2.175rem + 2px);
-  padding: 0.34375rem 0.75rem;
+  padding: 0.34375rem 0.8125rem;
   line-height: 1.7;
   color: #313338;
   background-color: linear-gradient(0deg, #F3F5F8 0%, #FFFFFF 100%);
@@ -5493,8 +5493,8 @@ a.breadcrumb-item:hover,
 
 .badge {
   display: inline-block;
-  padding: 0.1875rem 0.75em;
-  font-size: 0.625rem;
+  padding: 0.125rem 0.75em;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.7;
   text-align: center;
@@ -5509,6 +5509,7 @@ a.breadcrumb-item:hover,
 
 .badge-lg {
   font-size: 0.875rem;
+  padding: .1875rem .75rem;
 }
 
 .btn .badge {
@@ -5517,9 +5518,13 @@ a.breadcrumb-item:hover,
 }
 
 .badge-pill {
-  padding-right: 0.75em;
-  padding-left: 0.75em;
   border-radius: 10rem;
+}
+
+.badge-pill:not(.badge-lg) {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  line-height: 1.125rem;
 }
 
 .badge-primary {
@@ -5796,6 +5801,11 @@ a.breadcrumb-item:hover,
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border-radius: 3px;
+  /* @goorm: add class */
+}
+
+.alert i:first-child {
+  margin-right: .75rem;
 }
 
 .alert-heading {
@@ -5806,8 +5816,10 @@ a.breadcrumb-item:hover,
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.75rem 1.25rem;
+  padding: 1.125rem 1.375rem;
   color: inherit;
+  font-size: 0.75rem;
+  opacity: 1;
 }
 
 .alert-primary {

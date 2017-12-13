@@ -10,6 +10,11 @@
   // border: $alert-border-width solid transparent; // @goorm: original 보더 사용하지 않음
   
   @include border-radius($alert-border-radius);
+  
+  /* @goorm: add class */
+  i:first-child {
+    margin-right: .75rem;
+  }
 }
 
 // Headings for larger alerts
@@ -37,8 +42,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: $alert-padding-y $alert-padding-x;
+    // padding: $alert-padding-y $alert-padding-x;	// @goorm: original
+    padding: 1.125rem 1.375rem;
     color: inherit;
+    
+    font-size: $font-size-sm;	// @goorm: add
+    opacity: 1;	// @goorm: add
   }
 }
 
