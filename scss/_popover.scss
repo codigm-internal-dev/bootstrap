@@ -11,6 +11,7 @@
   // font-size: $font-size-sm;	// @goorm: original
   // Allow breaking very long words so they don't overflow the popover's bounds
   word-wrap: break-word;
+  word-break: keep-all;	// @goorm: add
   background-color: $popover-bg;
   background-clip: padding-box;
   border: $popover-border-width solid $popover-border-color;
@@ -54,6 +55,7 @@
 
     .arrow {
       bottom: 0;
+      left: 50% !important;	// @goorm: add
     }
 
     .arrow::before,
@@ -79,6 +81,7 @@
 
     .arrow {
       left: 0;
+      top: 50% !important;	// @goorm: add
     }
 
     .arrow::before,
@@ -103,7 +106,7 @@
 
     .arrow {
       top: 0;
-      margin-left: .1875rem;	// @goorm: add
+      left: 50% !important;	// @goorm: add
     }
 
     .arrow::before,
@@ -140,6 +143,7 @@
 
     .arrow {
       right: 0;
+      top: 50% !important;	// @goorm: add
     }
 
     .arrow::before,

@@ -35,8 +35,8 @@
     
     /* @goorm: add class */
     .custom-control {
-      min-height: unset;
-      padding: 0;
+      min-height: 1.25rem;
+      padding: $table-cell-padding-sm-y;
       margin: 0;
       
       .custom-control-indicator {

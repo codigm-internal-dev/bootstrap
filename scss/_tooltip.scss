@@ -7,9 +7,11 @@
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
   @include reset-text();
-  font-size: $font-size-sm;
+  // font-size: $font-size-sm;	// @goorm: original
+  font-size: $font-size-base;	// @goorm: new
   // Allow breaking very long words so they don't overflow the tooltip's bounds
   word-wrap: break-word;
+  word-break: keep-all;	// @goorm: add
   opacity: 0;
 
   &.show { opacity: $tooltip-opacity; }
@@ -21,63 +23,217 @@
     height: $tooltip-arrow-height;
   }
 
-  .arrow::before {
+  // .arrow::before {	// @goorm: original
+  //   position: absolute;
+  //   border-color: transparent;
+  //   border-style: solid;
+  // }
+  
+  /* @goorm: add class */
+  .arrow::before,
+  .arrow::after {
     position: absolute;
+    display: block;
     border-color: transparent;
     border-style: solid;
   }
 
+  /* @goorm: add class */
+  .arrow::before {
+    content: "";
+    border-width: $tooltip-arrow-width;
+  }
+  
+  /* @goorm: add class */
+  .arrow::after {
+    content: "";
+    border-width: $tooltip-arrow-width;
+  }
+
   &.bs-tooltip-top {
-    padding: $tooltip-arrow-width 0;
+    padding: $tooltip-arrow-width 0 0;
+    margin-bottom: $tooltip-arrow-width;	// @goorm: add
+    
     .arrow {
       bottom: 0;
+      left: 50% !important;	// @goorm: add
     }
 
+    // .arrow::before {	// @goorm: original
+    //   margin-left: -$tooltip-arrow-width;
+    //   content: "";
+    //   border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+    //   border-top-color: $tooltip-arrow-color;
+    // }
+    
+    /* @goorm: add class */
+    .arrow::before,
+    .arrow::after {
+      border-bottom-width: 0;
+    }
+
+    /* @goorm: add class */
     .arrow::before {
+      bottom: -$tooltip-arrow-width;
       margin-left: -$tooltip-arrow-width;
-      content: "";
-      border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+      border-top-color: $tooltip-bg;
+    }
+
+    /* @goorm: add class */
+    .arrow::after {
+      bottom: calc((#{$tooltip-arrow-width} - #{$tooltip-border-width}) * -1);
+      margin-left: -$tooltip-arrow-width;
       border-top-color: $tooltip-arrow-color;
+    }
+  
+  	/* @goorm: add class */
+    &.tooltip-light {
+      .arrow::before {
+        border-top-color: $tooltip-arrow-outer-color;
+      }
+      
+      .arrow::after {
+        border-top-color: #F3F5F8;
+      }
     }
   }
   &.bs-tooltip-right {
-    padding: 0 $tooltip-arrow-width;
+    padding: 0 $tooltip-arrow-width 0 0;
+    margin-left: $tooltip-arrow-width;	// @goorm: add
+    
     .arrow {
       left: 0;
+      top: 50% !important;	// @goorm: add
     }
 
-    .arrow::before {
+    // .arrow::before {	// @goorm: original
+    //   margin-top: -$tooltip-arrow-width;
+    //   content: "";
+    //   border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
+    //   border-right-color: $tooltip-arrow-color;
+    // }
+    
+    /* @goorm: add class */
+    .arrow::before,
+    .arrow::after {
       margin-top: -$tooltip-arrow-width;
-      content: "";
-      border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
+      border-left-width: 0;
+    }
+
+    /* @goorm: add class */
+    .arrow::before {
+      left: -$tooltip-arrow-width;
+      border-right-color: $tooltip-bg;
+    }
+
+    /* @goorm: add class */
+    .arrow::after {
+      left: calc((#{$tooltip-arrow-width} - #{$tooltip-border-width}) * -1);
       border-right-color: $tooltip-arrow-color;
+    }
+    
+    /* @goorm: add class */
+    &.tooltip-light {
+      .arrow::before {
+        border-right-color: $tooltip-arrow-outer-color;
+      }
+      
+      .arrow::after {
+        border-right-color: #F3F5F8;
+      }
     }
   }
   &.bs-tooltip-bottom {
-    padding: $tooltip-arrow-width 0;
+    padding: 0 0 $tooltip-arrow-width;
+    margin-top: $tooltip-arrow-width;	// @goorm: add
+    
     .arrow {
       top: 0;
+      left: 50% !important;	// @goorm: add
     }
 
-    .arrow::before {
+    // .arrow::before {	// @goorm: original
+    //   margin-left: -$tooltip-arrow-width;
+    //   content: "";
+    //   border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+    //   border-bottom-color: $tooltip-arrow-color;
+    // }
+    
+    /* @goorm: add class */
+    .arrow::before,
+    .arrow::after {
       margin-left: -$tooltip-arrow-width;
-      content: "";
-      border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+      border-top-width: 0;
+    }
+
+    /* @goorm: add class */
+    .arrow::before {
+      top: -$tooltip-arrow-width;
+      border-bottom-color: $tooltip-bg;
+    }
+
+    /* @goorm: add class */
+    .arrow::after {
+      top: calc((#{$tooltip-arrow-width} - #{$tooltip-border-width}) * -1);
       border-bottom-color: $tooltip-arrow-color;
+    }
+    
+    /* @goorm: add class */
+    &.tooltip-light {
+      .arrow::before {
+        border-bottom-color: $tooltip-arrow-outer-color;
+      }
+      
+      .arrow::after {
+        border-bottom-color: $white;
+      }
     }
   }
   &.bs-tooltip-left {
-    padding: 0 $tooltip-arrow-width;
+    padding: 0 0 0 $tooltip-arrow-width;
+    margin-right: $tooltip-arrow-width;	// @goorm: add
+    
     .arrow {
       right: 0;
+      top: 50% !important;	// @goorm: add
     }
 
+    // .arrow::before {	// @goorm: original
+    //   right: 0;
+    //   margin-top: -($tooltip-arrow-width);
+    //   content: "";
+    //   border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
+    //   border-left-color: $tooltip-arrow-color;
+    // }
+    
+    /* @goorm: add class */
+    .arrow::before,
+    .arrow::after {
+      margin-top: -$tooltip-arrow-width;
+      border-right-width: 0;
+    }
+
+    /* @goorm: add class */
     .arrow::before {
-      right: 0;
-      margin-top: -($tooltip-arrow-width);
-      content: "";
-      border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
+      right: -$tooltip-arrow-width;
+      border-left-color: $tooltip-bg;
+    }
+
+    /* @goorm: add class */
+    .arrow::after {
+      right: calc((#{$tooltip-arrow-width} - #{$tooltip-border-width}) * -1);
       border-left-color: $tooltip-arrow-color;
+    }
+    
+    /* @goorm: add class */
+    &.tooltip-light {
+      .arrow::before {
+        border-left-color: $tooltip-arrow-outer-color;
+      }
+      
+      .arrow::after {
+        border-left-color: #F3F5F8;
+      }
     }
   }
   &.bs-tooltip-auto {
@@ -94,6 +250,15 @@
       @extend .bs-tooltip-left;
     }
   }
+  
+	/* @goorm: add class */
+  &.tooltip-light {
+    .tooltip-inner {
+      @include gradient-directional(#F3F5F8 0%, $white 100%, 0deg);
+      border-color: $tooltip-border-color;
+      color: inherit;
+    }
+  }
 }
 
 // Wrapper for the tooltip content
@@ -104,4 +269,6 @@
   text-align: center;
   background-color: $tooltip-bg;
   @include border-radius($border-radius);
+  box-shadow: 0 .0625rem .1875rem 0 rgba(0,0,0,0.2);
+  border: $border-width solid $tooltip-bg;	// @goorm: add
 }

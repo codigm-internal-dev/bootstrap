@@ -99,6 +99,14 @@ fieldset[disabled] a.btn {
 }
 
 /* @goorm: add class */
+.btn-tooltip {
+  background-color: transparent;
+  color: $light;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* @goorm: add class */
 .btn-dropdown {
 	min-width: 230px;
   border: $border-width solid $gray-400;

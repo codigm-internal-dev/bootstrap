@@ -815,17 +815,27 @@ $card-band-height:                  5px !default;// @goorm: add
 
 // Tooltips
 
-$tooltip-max-width:           200px !default;
+// $tooltip-max-width:           200px !default;	// @goorm: original
+$tooltip-max-width:           149px !default;	// @goorm: new
+$tooltip-border-width:        $border-width !default;	// @goorm: add
 $tooltip-color:               $white !default;
-$tooltip-bg:                  $black !default;
-$tooltip-opacity:             .9 !default;
-$tooltip-padding-y:           .25rem !default;
-$tooltip-padding-x:           .5rem !default;
+$tooltip-border-color:        #CED0DB !default;	// @goorm: add
+// $tooltip-bg:                  $black !default;	// @goorm: original
+$tooltip-bg:                  $gray-700 !default;	// @goorm: new
+// $tooltip-opacity:             .9 !default;	// @goorm: original
+$tooltip-opacity:             1 !default;	// @goorm: new
+// $tooltip-padding-y:           .25rem !default;	// @goorm: original
+$tooltip-padding-y:           .4375rem !default;	// @goorm: new
+// $tooltip-padding-x:           .5rem !default;	// @goorm: original
+$tooltip-padding-x:           1.125rem !default;	// @goorm: new
 $tooltip-margin:              0 !default;
 
-$tooltip-arrow-width:         .4rem !default;
+// $tooltip-arrow-width:         .4rem !default;	// @goorm: original
+$tooltip-arrow-width:         .3125rem !default;	// @goorm: new
 $tooltip-arrow-height:        $tooltip-arrow-width !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
+
+$tooltip-arrow-outer-color:   fade-in($tooltip-border-color, .05) !default;	// @goorm: new
 
 
 // Popovers
@@ -850,9 +860,8 @@ $popover-body-padding-y:            $popover-header-padding-y !default;
 $popover-body-padding-x:            $popover-header-padding-x !default;
 
 // $popover-arrow-width:               .8rem !default;	// @goorm: original
-$popover-arrow-width:               .4rem !default;	// @goorm: new
-// $popover-arrow-height:              .4rem !default;	// @goorm: original
-$popover-arrow-height:              .2rem !default;	// @goorm: new
+$popover-arrow-width:               .3125rem !default;	// @goorm: new
+$popover-arrow-height:              .4rem !default;
 $popover-arrow-color:               $popover-bg !default;
 
 $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
