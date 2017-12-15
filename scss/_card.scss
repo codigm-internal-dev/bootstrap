@@ -33,7 +33,7 @@
   }
   
   /* @goorm: add class */
-  &:hover {
+  &.card-hover:hover {
     box-shadow: 0 .25rem 1rem 0 rgba(0,0,0,0.2);
   }
   
@@ -54,40 +54,67 @@
       margin-bottom: .1875rem;
     }
   }
-}
+  
+  /* @goorm: add class */
+  &.card-progress {
+    .card-body {
+      display: -ms-flexbox !important;
+    	display: flex !important;
+      -ms-flex-direction: column !important;
+    	flex-direction: column !important;
+    }
+    
+    .progress-wrapper {
+      margin-top: auto;
+      
+      .progress-label {
+        color: $gray-700;
 
-/* @goorm: add class */
-.card-lecture {
-  @include border-radius(.1875rem);
-  box-shadow: .125rem .125rem .1875rem 0 rgba(0,0,0,0.2);
-  width: 16.375rem;
-  
-  img {
-    height: 8.625rem;
+        span {
+          font-size: $font-size-lg;
+        }
+      }
+
+      .progress,
+      .progress-bar {
+        height: .375rem;
+      }
+    }
   }
-  
-  .card-body {
-    padding: 1rem 1.25rem;
-    height: 8.875rem;
-  }
-  
-  .card-title {
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-    height: $headings-line-height * 2em;
-    white-space: normal;
-    word-wrap: break-word;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    /* autoprefixer: off */
-    -webkit-box-orient: vertical;
-  }
-  
-  .card-footer {
-    margin: 0 20px;
-    border-color: #E7E8ED;
+
+  /* @goorm: add class */
+  &.card-goorm {
+    @include border-radius(.1875rem);
+    box-shadow: .125rem .125rem .1875rem 0 rgba(0,0,0,0.2);
+    width: 16.375rem;
+
+    img {
+      height: 8.625rem;
+    }
+
+    .card-body {
+      padding: 1rem 1.25rem;
+      height: 8.875rem;
+    }
+
+    .card-title {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      height: $headings-line-height * 2em;
+      white-space: normal;
+      word-wrap: break-word;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2;
+      /* autoprefixer: off */
+      -webkit-box-orient: vertical;
+    }
+
+    .card-footer {
+      margin: 0 20px;
+      border-color: #E7E8ED;
+    }
   }
 }
 

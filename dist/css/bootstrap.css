@@ -4928,6 +4928,8 @@ tbody.collapse.show {
   box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.2);
   /* @goorm: add class */
   /* @goorm: add class */
+  /* @goorm: add class */
+  /* @goorm: add class */
 }
 
 .card > hr {
@@ -4945,7 +4947,7 @@ tbody.collapse.show {
   border-bottom-left-radius: 0.25rem;
 }
 
-.card:hover {
+.card.card-hover:hover {
   box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -4966,23 +4968,46 @@ tbody.collapse.show {
   margin-bottom: .1875rem;
 }
 
-/* @goorm: add class */
-.card-lecture {
+.card.card-progress .card-body {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+.card.card-progress .progress-wrapper {
+  margin-top: auto;
+}
+
+.card.card-progress .progress-wrapper .progress-label {
+  color: #494E5F;
+}
+
+.card.card-progress .progress-wrapper .progress-label span {
+  font-size: 1rem;
+}
+
+.card.card-progress .progress-wrapper .progress,
+.card.card-progress .progress-wrapper .progress-bar {
+  height: .375rem;
+}
+
+.card.card-goorm {
   border-radius: 0.1875rem;
   box-shadow: 0.125rem 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.2);
   width: 16.375rem;
 }
 
-.card-lecture img {
+.card.card-goorm img {
   height: 8.625rem;
 }
 
-.card-lecture .card-body {
+.card.card-goorm .card-body {
   padding: 1rem 1.25rem;
   height: 8.875rem;
 }
 
-.card-lecture .card-title {
+.card.card-goorm .card-title {
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4996,7 +5021,7 @@ tbody.collapse.show {
   -webkit-box-orient: vertical;
 }
 
-.card-lecture .card-footer {
+.card.card-goorm .card-footer {
   margin: 0 20px;
   border-color: #E7E8ED;
 }
