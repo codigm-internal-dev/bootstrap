@@ -3213,6 +3213,7 @@ fieldset[disabled] a.btn {
 
 .btn-dropdown.btn-sm, .btn-group-sm > .btn-dropdown.btn {
   padding: .21875rem .8125rem;
+  height: 31px;
 }
 
 .btn-dropdown.btn-lg, .btn-group-lg > .btn-dropdown.btn {
@@ -4407,6 +4408,10 @@ tbody.collapse.show {
   padding-bottom: .9375rem;
   -ms-flex-wrap: unset;
   flex-wrap: unset;
+}
+
+.tab-scroll .nav.nav-right *:first-child {
+  margin-left: auto;
 }
 
 .tab-scroll .tab-scroller {

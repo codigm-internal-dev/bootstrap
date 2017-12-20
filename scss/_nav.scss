@@ -82,6 +82,12 @@
     overflow: auto;
     padding-bottom: .9375rem;
     flex-wrap: unset;
+    
+    &.nav-right {
+      *:first-child {
+        margin-left: auto;
+      }
+    }
   }
   
   .tab-scroller {
