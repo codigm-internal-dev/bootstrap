@@ -32,8 +32,7 @@
       right: .5rem;
       z-index: 2;
       color: $light;
-      -ms-flex-item-align: center !important;
-    	align-self: center !important;
+    	align-self: center;
       
       .gi {
         right: .375rem;

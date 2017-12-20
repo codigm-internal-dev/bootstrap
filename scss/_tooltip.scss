@@ -250,7 +250,11 @@
       @extend .bs-tooltip-left;
     }
   }
-  
+	/* @goorm: add class */  
+  &.tooltip-sm {
+	font-size: $font-size-sm;
+  }
+
 	/* @goorm: add class */
   &.tooltip-light {
     .tooltip-inner {
@@ -271,4 +275,9 @@
   @include border-radius($border-radius);
   box-shadow: 0 .0625rem .1875rem 0 rgba(0,0,0,0.2);
   border: $border-width solid $tooltip-bg;	// @goorm: add
+}
+
+/* @goorm: add class */
+.tooltip-sm .tooltip-inner {
+	padding: 0.15rem 0.4rem; 
 }

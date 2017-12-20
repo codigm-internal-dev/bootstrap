@@ -35,6 +35,7 @@
     // border-color: $border;	// @goorm: original
     border-color: $gray-400;	// @goorm: new
     color: rgba($white, .54);	// @goorm: add
+    cursor: not-allowed; // @goorm: add
   }
 
   &:not([disabled]):not(.disabled):active,

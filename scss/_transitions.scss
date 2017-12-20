@@ -30,13 +30,11 @@
 	a {
 		text-decoration: none;
     
-    display: -ms-flexbox !important;
-    display: flex !important;
+    display: flex;
     
     color: inherit;
     
-    -ms-flex-align: center !important;
-    align-items: center !important;
+    align-items: center;
 	}
   
   @for $i from 1 through 2 {

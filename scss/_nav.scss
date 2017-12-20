@@ -72,6 +72,50 @@
   }
 }
 
+/* @goorm: add class */
+.tab-scroll {
+  overflow: hidden;
+  height: 4.0625rem;
+  position: relative;
+  
+  .nav {
+    overflow: auto;
+    padding-bottom: .9375rem;
+    flex-wrap: unset;
+  }
+  
+  .tab-scroller {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4.4375rem;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    
+    &.prev {
+    	background: linear-gradient(90deg, $white 0%, rgba(250,250,250,0) 100%);	// opaque color should be changed with its background color
+      padding-left: .25rem;
+    }
+    
+    &.next {
+      right: 0;
+      justify-content: flex-end;
+    	background: linear-gradient(90deg, rgba(250,250,250,0) 0%, $white 100%);	// opaque color should be changed with its background color
+      padding-right: .25rem;
+    }
+    
+    .btn {
+      height: 1.625rem;
+      width: 1.625rem;
+      border-radius: 50%;
+      background-color: $white;
+      border-color: $text-muted;
+      color: $text-muted;
+      padding: 0;
+    }
+  }
+}
 
 //
 // Pills

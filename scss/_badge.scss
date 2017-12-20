@@ -9,7 +9,7 @@
   font-size: $badge-font-size;
   font-weight: $badge-font-weight;
   // line-height: 1; // @goorm: original
-  line-height: 1.7; // @goorm: new
+  line-height: 1.6666667; // @goorm: new
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -27,8 +27,9 @@
 // default | large
 
 .badge-lg {
+	padding: .1875rem .75rem;
   font-size: $badge-font-size-lg;
-  padding: .1875rem .75rem;
+	line-height: $line-height-base;
 }
 
 // Quick fix for badges in buttons
@@ -42,13 +43,15 @@
 // Make them extra rounded with a modifier to replace v3's badges.
 
 .badge-pill {
+	padding-right: $badge-pill-padding-x;
+	padding-left: $badge-pill-padding-x;
   @include border-radius($badge-pill-border-radius);
   
-  &:not(.badge-lg) {
-    padding-right: $badge-pill-padding-x;
-  	padding-left: $badge-pill-padding-x;
-    line-height: $font-size-xl;
-  }
+  // &:not(.badge-lg) { // @goorm: new
+  //   padding-right: $badge-pill-padding-x;
+  // 	padding-left: $badge-pill-padding-x;
+  //   line-height: $font-size-xl;
+  // }
 }
 
 // Colors

@@ -67,10 +67,8 @@
   
   /* @goorm: add class */
   .nav-item {
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -ms-flex-align: center !important;
-    align-items: center !important;
+    display: flex;
+    align-items: center;
     
     .nav-link + .dropdown-menu-goorm {
       min-width: 9.375rem !important;

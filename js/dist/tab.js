@@ -26,14 +26,24 @@ var Tab = function ($) {
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
+    SCROLL: "scroll" + EVENT_KEY,
+    // @goorm: add
+    RESIZE: "resize" + EVENT_KEY // @goorm: add
+
   };
   var ClassName = {
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active',
     DISABLED: 'disabled',
     FADE: 'fade',
-    SHOW: 'show'
+    SHOW: 'show',
+    PREV: 'prev',
+    // @goorm: add
+    NEXT: 'next',
+    // @goorm: add
+    INVISIBLE: 'invisible' // @goorm: add
+
   };
   var Selector = {
     DROPDOWN: '.dropdown',
@@ -42,7 +52,15 @@ var Tab = function ($) {
     ACTIVE_UL: '> li > .active',
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
     DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
+    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active',
+    TAB_SCROLL_BTN: '.tab-scroller .btn',
+    // @goorm: add
+    TAB_SCROLL_PREV: '.tab-scroller.prev',
+    // @goorm: add
+    TAB_SCROLL_NEXT: '.tab-scroller.next',
+    // @goorm: add
+    TAB_SCROLL_NAV: '.tab-scroll .nav' // @goorm: add
+
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -124,6 +142,56 @@ var Tab = function ($) {
     _proto.dispose = function dispose() {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
+    };
+    /* @goorm: add function */
+
+
+    _proto.scrollTo = function scrollTo() {
+      var tabScroller = $(this._element.parentNode);
+      var listElement = tabScroller.siblings(Selector.NAV_LIST_GROUP)[0];
+
+      if (listElement) {
+        if (tabScroller.hasClass(ClassName.PREV)) {
+          listElement.scrollLeft = 0;
+          tabScroller.siblings(Selector.TAB_SCROLL_NEXT).removeClass(ClassName.INVISIBLE);
+        } else if (tabScroller.hasClass(ClassName.NEXT)) {
+          listElement.scrollLeft = listElement.scrollWidth;
+          tabScroller.siblings(Selector.TAB_SCROLL_PREV).removeClass(ClassName.INVISIBLE);
+        }
+
+        tabScroller.addClass(ClassName.INVISIBLE);
+      }
+    };
+    /* @goorm: add function */
+
+
+    _proto.scroll = function scroll() {
+      var prevButton = $(this._element).siblings(Selector.TAB_SCROLL_PREV);
+      var nextButton = $(this._element).siblings(Selector.TAB_SCROLL_NEXT);
+
+      if (this._element.scrollLeft === 0) {
+        nextButton.removeClass(ClassName.INVISIBLE);
+        prevButton.addClass(ClassName.INVISIBLE);
+      } else if (this._element.scrollLeft === this._element.scrollWidth - this._element.clientWidth) {
+        prevButton.removeClass(ClassName.INVISIBLE);
+        nextButton.addClass(ClassName.INVISIBLE);
+      } else {
+        prevButton.removeClass(ClassName.INVISIBLE);
+        nextButton.removeClass(ClassName.INVISIBLE);
+      }
+    };
+    /* @goorm: add function */
+
+
+    _proto.resize = function resize() {
+      var self = this;
+      $(Selector.TAB_SCROLL_NAV).each(function () {
+        if (this.clientWidth < this.scrollWidth) {
+          Tab._jQueryInterface.call($(this), 'scroll');
+        } else {
+          $(this).siblings().addClass(ClassName.INVISIBLE);
+        }
+      });
     }; // private
 
 
@@ -239,6 +307,29 @@ var Tab = function ($) {
     event.preventDefault();
 
     Tab._jQueryInterface.call($(this), 'show');
+  })
+  /* @goorm: add event */
+  .on(Event.CLICK_DATA_API, Selector.TAB_SCROLL_BTN, function (event) {
+    event.preventDefault();
+
+    Tab._jQueryInterface.call($(this), 'scrollTo');
+  })
+  /* @goorm: add event */
+  .ready(function (event) {
+    $(Selector.TAB_SCROLL_NAV).on(Event.SCROLL, function (event) {
+      event.preventDefault();
+
+      Tab._jQueryInterface.call($(this), 'scroll');
+    });
+
+    Tab._jQueryInterface.call($(Selector.TAB_SCROLL_NAV), 'resize');
+  });
+  /* @goorm: add event */
+
+  $(window).on(Event.RESIZE, function (event) {
+    event.preventDefault();
+
+    Tab._jQueryInterface.call($(this), 'resize');
   });
   /**
    * ------------------------------------------------------------------------

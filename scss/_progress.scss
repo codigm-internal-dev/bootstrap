@@ -35,8 +35,7 @@
   
   /* @goorm: add class */
   &.progress-steps {
-    -ms-flex-align: center !important;
-    align-items: center !important;
+    align-items: center;
     margin-top: .3125rem;
     
     .progress-bar {

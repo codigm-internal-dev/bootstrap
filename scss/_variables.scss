@@ -294,14 +294,14 @@ $font-size-lg:                1rem !default; // @goorm: new / 16px
 // $font-size-sm:                ($font-size-base * 0.875) !default;// @goorm: original
 $font-size-sm:                .75rem !default;// @goorm: new / 12px
 
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
+$font-weight-light:           200 !default; // 300 -> 200 @goorm: new
+$font-weight-normal:          300 !default; // 400 -> 300 @goorm: new
 // $font-weight-bold:            700 !default; // @goorm: original
-$font-weight-bold:            500 !default; // @goorm: new
+$font-weight-bold:            400 !default; // 500 -> 400 @goorm: new
 
 $font-weight-base:            $font-weight-normal !default;
 // $line-height-base:            1.5 !default; // @goorm: original
-$line-height-base:            1.7 !default; // @goorm: new
+$line-height-base:            1.7142857 !default; // @goorm: new
 
 // $h1-font-size:                $font-size-base * 2.5 !default; // @goorm: original
 // $h2-font-size:                $font-size-base * 2 !default; // @goorm: original
@@ -410,9 +410,9 @@ $table-dark-color:            $body-bg !default;
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 // $input-btn-padding-y:         .375rem !default;// @goorm: original
-$input-btn-padding-y:         .34375rem !default;// @goorm: new
-// $input-btn-padding-x:         .75rem !default;// @goorm: original
-$input-btn-padding-x:         .8125rem !default;// @goorm: new
+$input-btn-padding-y:         .3125rem !default;// @goorm: new
+$input-btn-padding-x:         .75rem !default;// @goorm: original
+// $input-btn-padding-x:         .8125rem !default;// @goorm: new
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
@@ -815,8 +815,7 @@ $card-band-height:                  5px !default;// @goorm: add
 
 // Tooltips
 
-// $tooltip-max-width:           200px !default;	// @goorm: original
-$tooltip-max-width:           149px !default;	// @goorm: new
+$tooltip-max-width:           200px !default;
 $tooltip-border-width:        $border-width !default;	// @goorm: add
 $tooltip-color:               $white !default;
 $tooltip-border-color:        #CED0DB !default;	// @goorm: add
@@ -871,11 +870,11 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default
 
 // $badge-font-size:                   75% !default; // @goorm: original
 $badge-font-size:                   $font-size-sm !default; // @goorm: new
-$badge-font-size-lg:                .875rem !default; // @goorm: add
+$badge-font-size-lg:                $font-size-base !default; // @goorm: add
 // $badge-font-weight:                 $font-weight-bold !default; // @goorm: original
 $badge-font-weight:                 $font-weight-normal !default; // @goorm: new
 // $badge-padding-y:                   .25em !default; // @goorm: original
-$badge-padding-y:                   .125rem !default; // @goorm: new
+$badge-padding-y:                   .0625rem !default; // @goorm: new
 // $badge-padding-x:                   .4em !default; // @goorm: original
 $badge-padding-x:                   .75em !default; // @goorm: new
 $badge-border-radius:               $border-radius !default;

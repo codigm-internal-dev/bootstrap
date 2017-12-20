@@ -105,10 +105,8 @@
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
   @include border-top-radius($border-radius-lg);
   
-  -ms-flex-align: center !important;	// @goorm: add
-  align-items: center !important;	// @goorm: add
-  display: -ms-flexbox !important;	// @goorm: add
-  display: flex !important;	// @goorm: add
+  align-items: center;	// @goorm: add
+  display: flex;	// @goorm: add
 
   .close {
     padding: $modal-header-padding;

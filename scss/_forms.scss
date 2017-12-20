@@ -203,10 +203,8 @@ select.form-control-lg {
   
   color: $light;	// @goorm: add
   
-  -ms-flex-align: center !important;	// @goorm: add
-  align-items: center !important;	// @goorm: add
-  display: -ms-flexbox !important;	// @goorm: add
-  display: flex !important;	// @goorm: add
+  align-items: center;	// @goorm: add
+  display: flex;	// @goorm: add
   
   /* @goorm: add class */
   .gi {

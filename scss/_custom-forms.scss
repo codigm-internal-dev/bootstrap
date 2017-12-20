@@ -90,12 +90,9 @@
   
   border: $border-width solid $input-border-color;	// @goorm: add
   
-  display: -ms-flexbox !important;	// @goorm: add
-  display: flex !important;	// @goorm: add
-  -ms-flex-pack: center !important;	// @goorm: add
-  justify-content: center !important;	// @goorm: add
-  -ms-flex-align: center !important;	// @goorm: add
-  align-items: center !important;	// @goorm: add
+  display: flex;	// @goorm: add
+  justify-content: center;	// @goorm: add
+  align-items: center;	// @goorm: add
   
   /* @goorm: add class */
   i {
