@@ -5512,7 +5512,7 @@ a.breadcrumb-item:hover,
   color: #1f70de;
   text-decoration: none;
   background-color: #FAFAFA;
-  border-color: #E8E8E8;
+  border-color: #CED0DA;
 }
 
 .page-item {
@@ -5540,7 +5540,7 @@ a.breadcrumb-item:hover,
   color: #6B727F;
   pointer-events: none;
   background-color: #fff;
-  border-color: #E8E8E8;
+  border-color: #CED0DA;
 }
 
 .page-item.other-pages .page-link {

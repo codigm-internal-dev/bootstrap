@@ -767,7 +767,8 @@ $pagination-border-color:           $gray-400 !default;	// @goorm: new
 
 $pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               $gray-200 !default;
-$pagination-hover-border-color:     $gray-300 !default;
+// $pagination-hover-border-color:     $gray-300 !default;	// @goorm: original
+$pagination-hover-border-color:     $gray-400 !default;	// @goorm: new
 
 // $pagination-active-color:           $white !default;	// @goorm: original
 $pagination-active-color:           #4F85E3 !default;	// @goorm: new
@@ -776,7 +777,8 @@ $pagination-active-border-color:    theme-color("primary") !default;
 
 $pagination-disabled-color:         $gray-600 !default;
 $pagination-disabled-bg:            $white !default;
-$pagination-disabled-border-color:  $gray-300 !default;
+// $pagination-disabled-border-color:  $gray-300 !default;	// @goorm: original
+$pagination-disabled-border-color:  $gray-400 !default;	// @goorm: new
 
 
 // Jumbotron
