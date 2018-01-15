@@ -163,13 +163,17 @@ const Tab = (($) => {
 
       if (listElement) {
         if (tabScroller.hasClass(ClassName.PREV)) {
-          listElement.scrollLeft = 0
+          listElement.scrollLeft -= listElement.clientWidth
           
-          tabScroller.siblings(Selector.TAB_SCROLL_NEXT).removeClass(ClassName.INVISIBLE)
+          if (listElement.scrollLeft === 0) {
+            tabScroller.siblings(Selector.TAB_SCROLL_NEXT).removeClass(ClassName.INVISIBLE)
+          }
         } else if (tabScroller.hasClass(ClassName.NEXT)) {
-          listElement.scrollLeft = listElement.scrollWidth
+          listElement.scrollLeft += listElement.clientWidth
           
-          tabScroller.siblings(Selector.TAB_SCROLL_PREV).removeClass(ClassName.INVISIBLE)
+          if (listElement.scrollLeft === listElement.scrollWidth) {
+            tabScroller.siblings(Selector.TAB_SCROLL_PREV).removeClass(ClassName.INVISIBLE)
+          }
         }
         
         tabScroller.addClass(ClassName.INVISIBLE)

@@ -3171,6 +3171,10 @@ fieldset[disabled] a.btn {
   padding-bottom: 0;
 }
 
+.btn-tooltip:focus, .btn-tooltip.focus {
+  box-shadow: none;
+}
+
 /* @goorm: add class */
 .btn-dropdown {
   min-width: 230px;
@@ -3455,6 +3459,14 @@ input:checked + .btn-switch-slider:before {
   align-items: center;
 }
 
+.accordion a:not(.on) .right-icon {
+  color: #90929E;
+}
+
+.accordion a:hover .right-icon {
+  color: #4F85E3;
+}
+
 .accordion .depth1-icon {
   margin-right: 8px;
 }
@@ -3465,10 +3477,6 @@ input:checked + .btn-switch-slider:before {
 
 .accordion .depth-icon {
   margin-right: 1.25rem;
-}
-
-.accordion i {
-  color: #90929E;
 }
 
 .accordion .depth1 > a {
@@ -3522,10 +3530,6 @@ input:checked + .btn-switch-slider:before {
 .accordion.dark_theme a.on, .accordion.dark_theme a:hover {
   background-color: #353F50;
   color: #3D81E0;
-}
-
-.accordion.dark_theme .depth1-icon {
-  color: #4B96E6;
 }
 
 .accordion.dark_theme .depth2 a {

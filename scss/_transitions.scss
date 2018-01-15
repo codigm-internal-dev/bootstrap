@@ -35,6 +35,13 @@
     color: inherit;
     
     align-items: center;
+    
+    &:not(.on) .right-icon {
+      color: $light;
+    }
+    &:hover .right-icon {
+      color: #4F85E3;
+    }
 	}
   
   @for $i from 1 through 2 {
@@ -45,10 +52,6 @@
 
 	.depth-icon {
     margin-right: 1.25rem;
-  }
-  
-  i {
-    color: $light;
   }
   
 	.depth1 {
@@ -109,9 +112,6 @@
         		background-color: #353F50;
 				color: #3D81E0;
 			}
-		}
-		.depth1-icon {
-			color: #4B96E6;
 		}
     
 		.depth2 {
