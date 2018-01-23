@@ -2,6 +2,7 @@
   // color: color-yiq($bg); // @goorm: original
   color: $white; // @goorm: new
   background-color: $bg;
+  border-color: $bg;// @goorm: new
 
   &[href] {
     @include hover-focus {
@@ -18,8 +19,6 @@
   color: $color;
   background-color: $white;
   border-color: $color;
-  border-width: 1px;
-  border-style: solid;
 
   &[href] {
     @include hover-focus {

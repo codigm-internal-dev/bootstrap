@@ -14,6 +14,8 @@
   white-space: nowrap;
   vertical-align: baseline;
   @include border-radius($badge-border-radius);
+  border-width: 1px;// @goorm: add
+  border-style: solid;// @goorm: add
 
   // Empty badges collapse automatically
   &:empty {
@@ -45,6 +47,8 @@
 .badge-pill {
 	padding-right: $badge-pill-padding-x;
 	padding-left: $badge-pill-padding-x;
+  padding-top: $badge-pill-padding-y;// @goorm: add
+  padding-bottom: $badge-pill-padding-y;// @goorm: add
   @include border-radius($badge-pill-border-radius);
   
   // &:not(.badge-lg) { // @goorm: new
@@ -52,6 +56,18 @@
   // 	padding-left: $badge-pill-padding-x;
   //   line-height: $font-size-xl;
   // }
+	
+  // @goorm: add
+  &.badge-sm {
+    font-size: $badge-font-size-tn;
+    line-height: $line-height-tn;
+    padding: $badge-pill-padding-y-sm $badge-pill-padding-x-sm;
+  }
+  
+  // @goorm: add
+  &.badge-lg {
+    padding: $badge-pill-padding-y-lg $badge-pill-padding-x-lg;
+  }
 }
 
 // Colors

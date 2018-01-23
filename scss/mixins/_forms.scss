@@ -40,8 +40,9 @@
     align-items: center;	// @goorm: add
     
     /* @goorm: add class */
-    > i {
+    .gi {
       margin-right: .3125rem;
+      font-size: $font-size-lg;
     }
   }
 

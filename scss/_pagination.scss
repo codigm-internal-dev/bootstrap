@@ -61,7 +61,8 @@
   /* @goorm: add class */
   &.page-ellipsis {
     .page-link {
-      padding: $pagination-pages-padding $pagination-ellipsis-padding-x;
+      padding: $pagination-pages-padding;
+      color: $gray-400;
     }
   }
 }

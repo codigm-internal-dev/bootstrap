@@ -8,6 +8,7 @@
   margin-bottom: $spacer;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
   font-size: $font-size-base;	// @goorm: add
+  font-weight: $font-weight-normal;	// @goorm: add
 
   th,
   td {
@@ -46,7 +47,7 @@
   }
   
   th {
-    font-weight: $font-weight-bold;	// @goorm: new
+    font-weight: $font-weight-bolder;	// @goorm: new
   }
 
   thead th {
@@ -81,6 +82,13 @@
   th,
   td {
     padding: $table-cell-padding-lg-y $table-cell-padding-lg-x;
+  }
+  
+  thead {
+    th,
+    td {
+      padding: $table-cell-padding-y $table-cell-padding-lg-x;
+    }
   }
 }
 

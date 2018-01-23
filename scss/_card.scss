@@ -166,8 +166,6 @@
   // padding: $card-spacer-x;	// @goorm: original
   padding: $card-spacer-y $card-spacer-x;	// @goorm: new
   
-  margin-bottom: .5rem;	// @goorm: add
-  
   /* @goorm: add class */
   img + & {
     padding: .9375rem;
