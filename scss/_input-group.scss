@@ -29,14 +29,10 @@
     /* @goorm: add */
     + .input-label-addon {
       position: absolute;
-      right: .5rem;
+      right: .8125rem;
       z-index: 2;
       color: $light;
     	align-self: center;
-      
-      .gi {
-        right: .375rem;
-      }
     }
   }
 }

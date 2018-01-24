@@ -14,6 +14,7 @@
   @include border-radius($card-border-radius);
   
   box-shadow: 0 .0625rem .1875rem 0 rgba(0,0,0,0.2);	// @goorm: add
+  transition: box-shadow 0.2s ease;// @goorm: add
 
   > hr {
     margin-right: 0;

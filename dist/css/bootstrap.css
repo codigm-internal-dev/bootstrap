@@ -2098,6 +2098,11 @@ select.form-control:focus::-ms-value {
   font-size: 12px;
 }
 
+.gr-file-input .gr-file-input__button:focus {
+  border-color: #609AE9;
+  box-shadow: none;
+}
+
 .gr-file-input .gr-file-input__chosen-text {
   margin-left: 5px;
 }
@@ -2149,6 +2154,7 @@ select.form-control:focus::-ms-value {
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0;
+  font-weight: 300;
 }
 
 .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control,
@@ -3533,6 +3539,8 @@ input:checked + .btn-switch-slider:before {
 
 .accordion .depth-icon {
   margin-right: 1.25rem;
+  font-size: 1rem;
+  color: #90929E;
 }
 
 .accordion .depth1 > a {
@@ -3541,7 +3549,15 @@ input:checked + .btn-switch-slider:before {
 
 .accordion .depth1 > a.on, .accordion .depth1 > a:hover {
   background-color: #F1F3F6;
-  color: #4F85E3;
+  color: #609AE9;
+}
+
+.accordion .depth1 > a.on .depth-icon, .accordion .depth1 > a:hover .depth-icon {
+  color: #609AE9;
+}
+
+.accordion .depth1 > a.on .caret, .accordion .depth1 > a:hover .caret {
+  color: #90929E;
 }
 
 .accordion .depth2 > a {
@@ -3551,7 +3567,7 @@ input:checked + .btn-switch-slider:before {
 
 .accordion .depth2 > a.on, .accordion .depth2 > a:hover {
   background-color: #F1F3F6;
-  color: #4F85E3;
+  color: #609AE9;
 }
 
 .accordion .caret {
@@ -3585,7 +3601,7 @@ input:checked + .btn-switch-slider:before {
 
 .accordion.dark_theme a.on, .accordion.dark_theme a:hover {
   background-color: #353F50;
-  color: #3D81E0;
+  color: #609AE9;
 }
 
 .accordion.dark_theme .depth2 a {
@@ -3594,7 +3610,7 @@ input:checked + .btn-switch-slider:before {
 }
 
 .accordion.dark_theme .depth2 a.on, .accordion.dark_theme .depth2 a:hover {
-  color: #3D81E0;
+  color: #609AE9;
   background-color: #353F50;
 }
 
@@ -4002,15 +4018,11 @@ tbody.collapse.show {
 
 .input-group .form-control + .input-label-addon {
   position: absolute;
-  right: .5rem;
+  right: .8125rem;
   z-index: 2;
   color: #90929E;
   -ms-flex-item-align: center;
   align-self: center;
-}
-
-.input-group .form-control + .input-label-addon .gi {
-  right: .375rem;
 }
 
 .input-group-addon,
@@ -4611,6 +4623,7 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  height: 70px;
 }
 
 .navbar > .container,
@@ -5077,6 +5090,7 @@ tbody.collapse.show {
   background-clip: border-box;
   border-radius: 0.25rem;
   box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease;
   /* @goorm: add class */
   /* @goorm: add class */
   /* @goorm: add class */
@@ -6106,7 +6120,7 @@ a.breadcrumb-item:hover,
 
 @-webkit-keyframes progress-bar-stripes {
   from {
-    background-position: 0.125rem 0;
+    background-position: 0.25rem 0;
   }
   to {
     background-position: 0 0;
@@ -6115,7 +6129,7 @@ a.breadcrumb-item:hover,
 
 @keyframes progress-bar-stripes {
   from {
-    background-position: 0.125rem 0;
+    background-position: 0.25rem 0;
   }
   to {
     background-position: 0 0;
@@ -6134,7 +6148,7 @@ a.breadcrumb-item:hover,
 .progress {
   display: -ms-flexbox;
   display: flex;
-  height: 0.125rem;
+  height: 0.25rem;
   font-size: 0.65625rem;
   background-color: #E2E7EE;
   border-radius: 0.625rem;
@@ -6145,12 +6159,8 @@ a.breadcrumb-item:hover,
 }
 
 .progress.progress-lg {
-  height: .25rem;
+  height: 0.375rem;
   border-radius: 6.25rem;
-}
-
-.progress.progress-lg .progress-bar {
-  height: .35375rem;
 }
 
 .progress.progress-steps {
@@ -6198,7 +6208,7 @@ a.breadcrumb-item:hover,
   text-align: center;
   background-color: #609AE9;
   transition: width 0.6s ease;
-  height: .235rem;
+  height: 100%;
   bottom: 0;
 }
 
@@ -6214,7 +6224,7 @@ a.breadcrumb-item:hover,
 
 .progress-bar-striped {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 0.125rem 0.125rem;
+  background-size: 0.25rem 0.25rem;
 }
 
 .progress-bar-animated {
@@ -7184,12 +7194,17 @@ button.close {
   border-bottom: 0;
 }
 
+.popover-body .list-group .list-group-item .notification__title {
+  font-weight: 400;
+}
+
 .popover-body .list-group .list-group-item .lecture-name {
   font-size: 0.75rem;
   color: #494E5F;
 }
 
-.popover-body .list-group .list-group-item .lecture-name .notified-date {
+.popover-body .list-group .list-group-item .notified-date {
+  font-size: 0.75rem;
   color: #90929E;
   margin-left: .5rem;
 }

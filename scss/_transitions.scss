@@ -28,12 +28,9 @@
   }
   
 	a {
-		text-decoration: none;
-    
+    text-decoration: none;
     display: flex;
-    
     color: inherit;
-    
     align-items: center;
     
     &:not(.on) .right-icon {
@@ -52,6 +49,8 @@
 
 	.depth-icon {
     margin-right: 1.25rem;
+    font-size: $font-size-lg;
+    color: $accordion-icon-color-default;
   }
   
 	.depth1 {
@@ -60,7 +59,15 @@
       
 			&.on, &:hover {
         background-color: $dropdown-link-hover-bg;
-        color: #4F85E3;
+        color: $accordion-color-highlight;
+        
+        .depth-icon {
+          color: $accordion-color-highlight;
+        }
+        
+        .caret {
+          color: $accordion-icon-color-default;
+        }
       }
 		}
 	}
@@ -68,16 +75,16 @@
 		> a {
 			padding: .1875rem 0 .1875rem 3.4375rem;
       line-height: 2.25rem;
+      
 			&.on, &:hover {
 				background-color: $dropdown-link-hover-bg;
-				color: #4F85E3;
+				color: $accordion-color-highlight;
 			}
 		}	
 	}
   
   .caret {
     font-size: 112.5%;
-    
     margin-left: auto !important;
   }
   
@@ -107,10 +114,9 @@
 			color: #FFFFFF;
 			background-color: #2B3240;
       
-			&.on,
-      		&:hover {
-        		background-color: #353F50;
-				color: #3D81E0;
+			&.on, &:hover {
+        background-color: #353F50;
+				color: $accordion-color-highlight;
 			}
 		}
     
@@ -119,7 +125,7 @@
 				color: $gray-400;
 				background-color: #222833;
 				&.on, &:hover {
-					color:#3D81E0;
+					color: $accordion-color-highlight;
 					background-color:#353F50;
 				}
 			}

@@ -25,12 +25,9 @@
   
   /* @goorm: add class */
   &.progress-lg {
-    height: .25rem;
+    height: $progress-height-lg;
     @include border-radius(6.25rem);
     
-    .progress-bar {
-      height: .35375rem;
-    }
   }
   
   /* @goorm: add class */
@@ -76,7 +73,7 @@
   background-color: $progress-bar-bg;
   @include transition($progress-bar-transition);
   
-  height: .235rem;	// @goorm: add
+  height: 100%;	// @goorm: add
   bottom: 0;	// @goorm: add
   
   &:first-child {

@@ -103,6 +103,11 @@ select.form-control {
     border-radius: 4px;
     padding: 1px 4px;
     font-size: 12px;
+    
+    &:focus {
+      border-color: #609AE9;
+    	box-shadow: none;
+    }
   }
   
   .gr-file-input__chosen-text {
@@ -177,6 +182,7 @@ select.form-control {
   background-color: transparent;
   border: solid transparent;
   border-width: $input-border-width 0;
+  font-weight: $font-weight-normal;// @goorm: add
 
   &.form-control-sm,
   &.form-control-lg {

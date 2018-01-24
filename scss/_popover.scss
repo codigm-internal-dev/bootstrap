@@ -221,14 +221,20 @@
         border-bottom: 0;
       }
       
+      .notification__title {
+        font-weight: $font-weight-bold;
+      }
+      
       .lecture-name {
         font-size: $font-size-sm;
         color: $list-group-action-color;
         
-        .notified-date {
-          color: $light;
-          margin-left: .5rem;
-        }
+      }
+      
+      .notified-date {
+        font-size: $font-size-sm;
+        color: $light;
+        margin-left: .5rem;
       }
     }
   }
